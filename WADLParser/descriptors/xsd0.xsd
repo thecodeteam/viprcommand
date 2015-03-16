@@ -1,0 +1,4347 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="acl_assignment_changes" type="aclAssignmentChanges"/>
+
+  <xs:element name="acl_assignments" type="aclAssignments"/>
+
+  <xs:element name="authnprovider" type="authnProviderRestRep"/>
+
+  <xs:element name="authnprovider_create" type="authnCreateParam"/>
+
+  <xs:element name="authnprovider_update" type="authnUpdateParam"/>
+
+  <xs:element name="authnproviders" type="authnProviderList"/>
+
+  <xs:element name="auto_tier_policies" type="autoTierPolicyList"/>
+
+  <xs:element name="auto_tiering_policy" type="autoTieringPolicyRestRep"/>
+
+  <xs:element name="available_attributes" type="attributeList"/>
+
+  <xs:element name="block_export" type="exportGroupRestRep"/>
+
+  <xs:element name="block_export_create" type="exportCreateParam"/>
+
+  <xs:element name="block_export_update" type="exportUpdateParam"/>
+
+  <xs:element name="block_migration" type="migrationRestRep"/>
+
+  <xs:element name="block_mirror" type="blockMirrorRestRep"/>
+
+  <xs:element name="block_protection" type="blockVirtualPoolProtectionParam"/>
+
+  <xs:element name="block_protection_update" type="blockVirtualPoolProtectionUpdateParam"/>
+
+  <xs:element name="block_snapshot" type="blockSnapshotRestRep"/>
+
+  <xs:element name="block_vpool" type="blockVirtualPoolRestRep"/>
+
+  <xs:element name="block_vpool_create" type="blockVirtualPoolParam"/>
+
+  <xs:element name="block_vpool_update" type="blockVirtualPoolUpdateParam"/>
+
+  <xs:element name="bulk-initiators" type="initiatorBulkRep"/>
+
+  <xs:element name="bulk-unmanaged-filesystems" type="unManagedFileBulkRep"/>
+
+  <xs:element name="bulkRestRep" type="bulkRestRep"/>
+
+  <xs:element name="bulk_auto_tiering_policies" type="autoTieringPolicyBulkRep"/>
+
+  <xs:element name="bulk_block_migrations" type="blockMigrationBulkRep"/>
+
+  <xs:element name="bulk_block_snapshots" type="blockSnapshotBulkRep"/>
+
+  <xs:element name="bulk_block_vpools" type="blockVirtualPoolBulkRep"/>
+
+  <xs:element name="bulk_clusters" type="clusterBulkRep"/>
+
+  <xs:element name="bulk_consistency_groups" type="blockConsistencyGroupBulkRep"/>
+
+  <xs:element name="bulk_exportgroups" type="exportGroupBulkRep"/>
+
+  <xs:element name="bulk_file_snapshots" type="fileSnapshotBulkRep"/>
+
+  <xs:element name="bulk_file_vpools" type="fileVirtualPoolBulkRep"/>
+
+  <xs:element name="bulk_filesystems" type="fileShareBulkRep"/>
+
+  <xs:element name="bulk_hosts" type="hostBulkRep"/>
+
+  <xs:element name="bulk_ip_interfaces" type="ipInterfaceBulkRep"/>
+
+  <xs:element name="bulk_itls" type="itlBulkRep"/>
+
+  <xs:element name="bulk_network_systems" type="networkSystemBulkRep"/>
+
+  <xs:element name="bulk_networks" type="networkBulkRep"/>
+
+  <xs:element name="bulk_projects" type="projectBulkRep"/>
+
+  <xs:element name="bulk_protection_systems" type="protectionSystemBulkRep"/>
+
+  <xs:element name="bulk_smis_providers" type="smisProviderBulkRep"/>
+
+  <xs:element name="bulk_storage_pools" type="storagePoolBulkRep"/>
+
+  <xs:element name="bulk_storage_ports" type="storagePortBulkRep"/>
+
+  <xs:element name="bulk_storage_providers" type="storageProviderBulkRep"/>
+
+  <xs:element name="bulk_storage_systems" type="storageSystemBulkRep"/>
+
+  <xs:element name="bulk_storage_tiers" type="storageTierBulkRep"/>
+
+  <xs:element name="bulk_tenants" type="tenantOrgBulkRep"/>
+
+  <xs:element name="bulk_unmanaged_volumes" type="unManagedBulkRep"/>
+
+  <xs:element name="bulk_varrays" type="virtualArrayBulkRep"/>
+
+  <xs:element name="bulk_vcenter_data_centers" type="vcenterDataCenterBulkRep"/>
+
+  <xs:element name="bulk_vcenters" type="vcenterBulkRep"/>
+
+  <xs:element name="bulk_volumes" type="volumeBulkRep"/>
+
+  <xs:element name="capacity" type="capacityResponse"/>
+
+  <xs:element name="certificate_chain" type="certificateChain"/>
+
+  <xs:element name="cluster" type="clusterRestRep"/>
+
+  <xs:element name="cluster_create" type="clusterCreateParam"/>
+
+  <xs:element name="cluster_update" type="clusterUpdateParam"/>
+
+  <xs:element name="clusters" type="clusterList"/>
+
+  <xs:element name="consistency_group" type="blockConsistencyGroupRestRep"/>
+
+  <xs:element name="consistency_group_create" type="blockConsistencyGroupCreate"/>
+
+  <xs:element name="consistency_group_snapshot_create" type="blockConsistencyGroupSnapshotCreate"/>
+
+  <xs:element name="consistency_group_update" type="blockConsistencyGroupUpdate"/>
+
+  <xs:element name="copies" type="copiesParam"/>
+
+  <xs:element name="copy" type="copy"/>
+
+  <xs:element name="decommissioned_resource" type="decommissionedResourceRep"/>
+
+  <xs:element name="decommissioned_resources" type="decommissionedResources"/>
+
+  <xs:element name="error" type="serviceErrorRestRep"/>
+
+  <xs:element name="export_block" type="exportBlockParam"/>
+
+  <xs:element name="fc_endpoints" type="fcEndpoints"/>
+
+  <xs:element name="fc_zone_reference" type="fcZoneReferenceRestRep"/>
+
+  <xs:element name="fc_zone_references" type="fcZoneReferences"/>
+
+  <xs:element name="file_protection" type="fileVirtualPoolProtectionParam"/>
+
+  <xs:element name="file_snapshot" type="fileSnapshotRestRep"/>
+
+  <xs:element name="file_vpool" type="fileVirtualPoolRestRep"/>
+
+  <xs:element name="file_vpool_create" type="fileVirtualPoolParam"/>
+
+  <xs:element name="file_vpool_update" type="fileVirtualPoolUpdateParam"/>
+
+  <xs:element name="filesystem" type="fileShareRestRep"/>
+
+  <xs:element name="filesystem_create" type="fileSystemParam"/>
+
+  <xs:element name="filesystem_deactivate" type="fileSystemDeleteParam"/>
+
+  <xs:element name="filesystem_expand" type="fileSystemExpandParam"/>
+
+  <xs:element name="filesystem_export" type="fileSystemExportParam"/>
+
+  <xs:element name="filesystem_export_update" type="fileExportUpdateParam"/>
+
+  <xs:element name="filesystem_exports" type="fileSystemExportList"/>
+
+  <xs:element name="filesystem_ingest" type="fileSystemIngest"/>
+
+  <xs:element name="filesystem_share" type="fileSystemShareParam"/>
+
+  <xs:element name="filesystem_snapshot_create" type="fileSystemSnapshotParam"/>
+
+  <xs:element name="filesystems" type="namedFileSystemList"/>
+
+  <xs:element name="host" type="hostRestRep"/>
+
+  <xs:element name="host_create" type="hostCreateParam"/>
+
+  <xs:element name="host_update" type="hostUpdateParam"/>
+
+  <xs:element name="hosts" type="hostList"/>
+
+  <xs:element name="ids" type="bulkIdParam"/>
+
+  <xs:element name="initiator" type="initiatorRestRep"/>
+
+  <xs:element name="initiator_create" type="initiatorCreateParam"/>
+
+  <xs:element name="initiator_update" type="initiatorUpdateParam"/>
+
+  <xs:element name="initiators" type="initiatorList"/>
+
+  <xs:element name="ip_interface" type="ipInterfaceRestRep"/>
+
+  <xs:element name="ip_interface_create" type="ipInterfaceCreateParam"/>
+
+  <xs:element name="ip_interface_update" type="ipInterfaceUpdateParam"/>
+
+  <xs:element name="ip_interfaces" type="ipInterfaceList"/>
+
+  <xs:element name="itl" type="itlRestRep"/>
+
+  <xs:element name="itls" type="itlRestRepList"/>
+
+  <xs:element name="login_data" type="loginData"/>
+
+  <xs:element name="managedResourceCapacity" type="managedResourceCapacity"/>
+
+  <xs:element name="managedResourcesCapacity" type="managedResourcesCapacity"/>
+
+  <xs:element name="migration_create" type="migrationParam"/>
+
+  <xs:element name="migrations" type="migrationList"/>
+
+  <xs:element name="mirrors" type="mirrorList"/>
+
+  <xs:element name="namespace" type="tenantNamespaceInfo"/>
+
+  <xs:element name="network" type="networkRestRep"/>
+
+  <xs:element name="network_create" type="networkCreate"/>
+
+  <xs:element name="network_endpoints" type="networkEndpointParam"/>
+
+  <xs:element name="network_system" type="networkSystemRestRep"/>
+
+  <xs:element name="network_system_create" type="networkSystemCreate"/>
+
+  <xs:element name="network_system_update" type="networkSystemUpdate"/>
+
+  <xs:element name="network_systems" type="networkSystemList"/>
+
+  <xs:element name="network_update" type="networkUpdate"/>
+
+  <xs:element name="networks" type="networkList"/>
+
+  <xs:element name="project" type="projectRestRep"/>
+
+  <xs:element name="project_create" type="projectParam"/>
+
+  <xs:element name="project_resources" type="resourceList"/>
+
+  <xs:element name="project_update" type="ProjectUpdateParam"/>
+
+  <xs:element name="projects" type="projectList"/>
+
+  <xs:element name="protection" type="virtualPoolProtectionParam"/>
+
+  <xs:element name="protection_connectivity" type="protectionSystemConnectivityRestRep"/>
+
+  <xs:element name="protection_connectivity_site" type="protectionSystemConnectivitySiteRestRep"/>
+
+  <xs:element name="protection_set" type="protectionSetRestRep"/>
+
+  <xs:element name="protection_system" type="protectionSystemRestRep"/>
+
+  <xs:element name="protection_system_create" type="protectionSystemRequestParam"/>
+
+  <xs:element name="protection_system_update" type="protectionSystemUpdateRequestParam"/>
+
+  <xs:element name="protection_systems" type="protectionSystemList"/>
+
+  <xs:element name="protection_varray_vpool" type="virtualPoolProtectionVirtualArraySettingsParam"/>
+
+  <xs:element name="quota_info" type="quotaInfo"/>
+
+  <xs:element name="quota_update" type="quotaUpdateParam"/>
+
+  <xs:element name="related_storage_pool" type="relatedStoragePool"/>
+
+  <xs:element name="results" type="searchResults"/>
+
+  <xs:element name="role_assignment_change" type="roleAssignmentChanges"/>
+
+  <xs:element name="role_assignments_create" type="roleAssignments"/>
+
+  <xs:element name="rotate_keycertchain" type="rotateKeyAndCertParam"/>
+
+  <xs:element name="san_fabrics" type="fabrics"/>
+
+  <xs:element name="san_zone" nillable="true" type="xs:anyType"/>
+
+  <xs:element name="san_zone_member" type="sanZoneMemberRestRep"/>
+
+  <xs:element name="san_zone_update" type="sanZoneUpdateParam"/>
+
+  <xs:element name="san_zones" nillable="true" type="xs:anyType"/>
+
+  <xs:element name="san_zones_create" type="sanZoneCreateParam"/>
+
+  <xs:element name="san_zones_delete" type="sanZonesDeleteParam"/>
+
+  <xs:element name="san_zones_update" type="sanZoneUpdateParams"/>
+
+  <xs:element name="share" type="smbShareResponse"/>
+
+  <xs:element name="smb_shares" type="fileSystemShareList"/>
+
+  <xs:element name="smis_provider" type="smisProviderRestRep"/>
+
+  <xs:element name="smis_provider_create" type="smisProviderCreateParam"/>
+
+  <xs:element name="smis_provider_update" type="smisProviderUpdateParam"/>
+
+  <xs:element name="smis_providers" type="smisProviderList"/>
+
+  <xs:element name="snapshots" type="snapshotList"/>
+
+  <xs:element name="storage_connectivity" type="storageSystemConnectivityRestRep"/>
+
+  <xs:element name="storage_connectivity_list" type="storageSystemConnectivityList"/>
+
+  <xs:element name="storage_pool" type="storagePoolRestRep"/>
+
+  <xs:element name="storage_pool_update" type="storagePoolUpdate"/>
+
+  <xs:element name="storage_pools" type="storagePoolList"/>
+
+  <xs:element name="storage_port" type="storagePortRestRep"/>
+
+  <xs:element name="storage_port_update" type="storagePortUpdate"/>
+
+  <xs:element name="storage_ports" type="storagePortList"/>
+
+  <xs:element name="storage_provider" type="storageProviderRestRep"/>
+
+  <xs:element name="storage_provider_create" type="storageProviderCreateParam"/>
+
+  <xs:element name="storage_provider_request" type="storageSystemProviderRequestParam"/>
+
+  <xs:element name="storage_provider_update" type="storageProviderUpdateParam"/>
+
+  <xs:element name="storage_providers" type="storageProviderList"/>
+
+  <xs:element name="storage_resources" type="storagePoolResources"/>
+
+  <xs:element name="storage_smisprovider_create" type="storageSystemSMISCreateParam"/>
+
+  <xs:element name="storage_smisprovider_update" type="storageSystemSMISUpdateParam"/>
+
+  <xs:element name="storage_system" type="storageSystemRestRep"/>
+
+  <xs:element name="storage_system_create" type="storageSystemRequestParam"/>
+
+  <xs:element name="storage_system_update" type="storageSystemUpdateRequestParam"/>
+
+  <xs:element name="storage_systems" type="storageSystemList"/>
+
+  <xs:element name="storage_tier" type="storageTierRestRep"/>
+
+  <xs:element name="storage_tiers" type="storageTierList"/>
+
+  <xs:element name="subtenant" type="subTenantRoles"/>
+
+  <xs:element name="subtenants" type="tenantOrgList"/>
+
+  <xs:element name="tag_changes" type="tagAssignment"/>
+
+  <xs:element name="tags" type="tags"/>
+
+  <xs:element name="task" type="taskResourceRep"/>
+
+  <xs:element name="tasks" type="taskList"/>
+
+  <xs:element name="tenant" type="tenantOrgRestRep"/>
+
+  <xs:element name="tenant_create" type="tenantCreateParam"/>
+
+  <xs:element name="tenant_info" type="tenantResponse"/>
+
+  <xs:element name="tenant_project" type="projectElement"/>
+
+  <xs:element name="tenant_update" type="tenantUpdateParam"/>
+
+  <xs:element name="tenants" type="userTenantList"/>
+
+  <xs:element name="trusted_certificate_changes" type="trustedCertificateChanges"/>
+
+  <xs:element name="trusted_certificates" type="trustedCertificates"/>
+
+  <xs:element name="truststore_settings" type="truststoreSettings"/>
+
+  <xs:element name="truststore_settings_changes" type="truststoreSettingsChanges"/>
+
+  <xs:element name="unmanaged_filesystem" type="unManagedFileSystemRestRep"/>
+
+  <xs:element name="unmanaged_filesystems" type="unManagedFileSystemList"/>
+
+  <xs:element name="unmanaged_volume" type="unManagedVolumeRestRep"/>
+
+  <xs:element name="unmanaged_volumes" type="unManagedVolumeList"/>
+
+  <xs:element name="user" type="userInfo"/>
+
+  <xs:element name="varray" type="virtualArrayRestRep"/>
+
+  <xs:element name="varray_connectivity" type="virtualArrayConnectivityRestRep"/>
+
+  <xs:element name="varray_connectivity_list" type="virtualArrayConnectivityList"/>
+
+  <xs:element name="varray_create" type="virtualArrayCreateParam"/>
+
+  <xs:element name="varray_internal_flags" type="virtualArrayInternalFlags"/>
+
+  <xs:element name="varray_update" type="virtualArrayUpdateParam"/>
+
+  <xs:element name="varrays" type="virtualArrayList"/>
+
+  <xs:element name="vcenter" type="vcenterRestRep"/>
+
+  <xs:element name="vcenter_create" type="vcenterCreateParam"/>
+
+  <xs:element name="vcenter_data_center" type="vcenterDataCenterRestRep"/>
+
+  <xs:element name="vcenter_data_center_create" type="vcenterDataCenterCreate"/>
+
+  <xs:element name="vcenter_data_center_update" type="vcenterDataCenterUpdate"/>
+
+  <xs:element name="vcenter_data_centers" type="vcenterDataCenterList"/>
+
+  <xs:element name="vcenter_update" type="vcenterUpdateParam"/>
+
+  <xs:element name="vcenters" type="vcenterList"/>
+
+  <xs:element name="vdc_add" type="virtualDataCenterAddParam"/>
+
+  <xs:element name="vdc_capacities" type="vdcCapacities"/>
+
+  <xs:element name="vdc_update" type="virtualDataCenterModifyParam"/>
+
+  <xs:element name="virtual_data_center" type="virtualDataCenterRestRep"/>
+
+  <xs:element name="virtual_data_center_secret_key" type="virtualDataCenterSecretKeyRestRep"/>
+
+  <xs:element name="virtual_data_centers" type="virtualDataCenterList"/>
+
+  <xs:element name="volume" type="volumeRestRep"/>
+
+  <xs:element name="volume_create" type="volumeCreate"/>
+
+  <xs:element name="volume_expand" type="volumeExpandParam"/>
+
+  <xs:element name="volume_full_copy_create" type="volumeFullCopyCreateParam"/>
+
+  <xs:element name="volume_ids" type="bulkDeleteParam"/>
+
+  <xs:element name="volume_ingest" type="volumeIngest"/>
+
+  <xs:element name="volume_param" type="volumeParam"/>
+
+  <xs:element name="volume_snapshot_create" type="volumeSnapshotParam"/>
+
+  <xs:element name="volume_varray_change" type="virtualArrayChangeParam"/>
+
+  <xs:element name="volume_vpool_change" type="virtualPoolChangeParam"/>
+
+  <xs:element name="volumes" type="namedVolumesList"/>
+
+  <xs:element name="volumes_vpool_change" type="volumeVirtualPoolChangeParam"/>
+
+  <xs:element name="vpool" type="virtualPoolCommonRestRep"/>
+
+  <xs:element name="vpool_change_list" type="virtualPoolChangeList"/>
+
+  <xs:element name="vpool_list" type="virtualPoolList"/>
+
+  <xs:element name="vpool_pool_update" type="virtualPoolPoolUpdateParam"/>
+
+  <xs:element name="vpool_update" type="virtualPoolUpdateParam"/>
+
+  <xs:element name="workflow" type="workflowRestRep"/>
+
+  <xs:element name="workflow_step" type="workflowStepRestRep"/>
+
+  <xs:element name="workflow_steps" type="stepList"/>
+
+  <xs:element name="workflows" type="workflowList"/>
+
+  <xs:element name="wwn_alias" nillable="true" type="xs:anyType"/>
+
+  <xs:element name="wwn_aliases" type="wwnAliasesParam"/>
+
+  <xs:element name="wwn_aliases_create" type="wwnAliasesCreateParam"/>
+
+  <xs:element name="wwn_aliases_delete" type="wwnAliasesDeleteParam"/>
+
+  <xs:element name="wwn_aliases_update" type="wwnAliasUpdateParams"/>
+
+  <xs:complexType name="sanZoneUpdateParams">
+    <xs:sequence>
+      <xs:element ref="san_zone_update" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="sanZoneUpdateParam">
+    <xs:sequence>
+      <xs:element name="add" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="member" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="remove" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="member" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="virtualPoolPoolUpdateParam">
+    <xs:sequence>
+      <xs:element name="assigned_pool_changes" type="storagePoolAssignmentChanges" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="storagePoolAssignmentChanges">
+    <xs:sequence>
+      <xs:element name="add" type="storagePoolAssignments" minOccurs="0"/>
+      <xs:element name="remove" type="storagePoolAssignments" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="storagePoolAssignments">
+    <xs:sequence>
+      <xs:element name="storage_pool" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="truststoreSettings">
+    <xs:sequence>
+      <xs:element name="accept_all_certificates" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="itlBulkRep">
+    <xs:sequence>
+      <xs:element ref="itl" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="itlRestRep">
+    <xs:sequence>
+      <xs:element name="device" type="itlBlockObjectRestRep" minOccurs="0"/>
+      <xs:element name="export" type="namedRelatedResourceRep" minOccurs="0"/>
+      <xs:element name="hlu" type="xs:int"/>
+      <xs:element name="initiator" type="itlInitiatorRestRep" minOccurs="0"/>
+      <xs:element name="san_zone_name" type="xs:string" minOccurs="0"/>
+      <xs:element name="target" type="itlStoragePortRestRep" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="itlBlockObjectRestRep">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string" minOccurs="0"/>
+      <xs:element name="link" type="restLinkRep" minOccurs="0"/>
+      <xs:element name="wwn" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="restLinkRep">
+    <xs:sequence/>
+    <xs:attribute name="rel" type="xs:string"/>
+    <xs:attribute name="href" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="namedRelatedResourceRep">
+    <xs:complexContent>
+      <xs:extension base="relatedResourceRep">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="relatedResourceRep">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string" minOccurs="0"/>
+      <xs:element name="link" type="restLinkRep" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="itlInitiatorRestRep">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string" minOccurs="0"/>
+      <xs:element name="link" type="restLinkRep" minOccurs="0"/>
+      <xs:element name="port" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="itlStoragePortRestRep">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string" minOccurs="0"/>
+      <xs:element name="ip_address" type="xs:string" minOccurs="0"/>
+      <xs:element name="link" type="restLinkRep" minOccurs="0"/>
+      <xs:element name="port" type="xs:string" minOccurs="0"/>
+      <xs:element name="tcp_port" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="fileSystemSnapshotParam">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="storagePortList">
+    <xs:sequence>
+      <xs:element name="storage_port" type="namedRelatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tenantNamespaceInfo">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="storageSystemProviderRequestParam">
+    <xs:sequence>
+      <xs:element name="serial_number" type="xs:string"/>
+      <xs:element name="system_type" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="loginData">
+    <xs:sequence>
+      <xs:element name="data" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="fileSystemShareParam">
+    <xs:complexContent>
+      <xs:extension base="fileSystemShareBase">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="fileSystemShareBase">
+    <xs:sequence>
+      <xs:element name="description" type="xs:string" minOccurs="0"/>
+      <xs:element name="permission" type="xs:string" minOccurs="0"/>
+      <xs:element name="permission_type" type="xs:string" minOccurs="0"/>
+      <xs:element name="name" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="fileSystemParam">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="size" type="xs:string"/>
+      <xs:element name="varray" type="xs:string"/>
+      <xs:element name="vpool" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="trustedCertificates">
+    <xs:sequence>
+      <xs:element name="certificate" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="exportGroupRestRep">
+    <xs:complexContent>
+      <xs:extension base="dataObjectRestRep">
+        <xs:sequence>
+          <xs:element name="clusters" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element ref="cluster" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="generated_name" type="xs:string" minOccurs="0"/>
+          <xs:element name="hosts" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element ref="host" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="initiators" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element ref="initiator" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="project" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="tenant" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="type" type="xs:string" minOccurs="0"/>
+          <xs:element name="varray" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="volumes" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="volume" type="exportBlockParam" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="dataObjectRestRep" abstract="true">
+    <xs:sequence>
+      <xs:element name="creation_time" type="xs:long" minOccurs="0"/>
+      <xs:element name="global" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="id" type="xs:string" minOccurs="0"/>
+      <xs:element name="inactive" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="internal" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="link" type="restLinkRep" minOccurs="0"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="remote" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="tags" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="tag" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="vdc" type="relatedResourceRep" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="clusterRestRep">
+    <xs:complexContent>
+      <xs:extension base="tenantResourceRestRep">
+        <xs:sequence>
+          <xs:element name="project" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="vcenter_data_center" type="relatedResourceRep" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="tenantResourceRestRep" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="dataObjectRestRep">
+        <xs:sequence>
+          <xs:element name="tenant" type="relatedResourceRep" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="hostRestRep">
+    <xs:complexContent>
+      <xs:extension base="computeSystemRestRep">
+        <xs:sequence>
+          <xs:element name="cluster" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="discoverable" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="host_name" type="xs:string" minOccurs="0"/>
+          <xs:element name="os_version" type="xs:string" minOccurs="0"/>
+          <xs:element name="port_number" type="xs:int" minOccurs="0"/>
+          <xs:element name="project" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="type" type="xs:string" minOccurs="0"/>
+          <xs:element name="use_ssl" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="user_name" type="xs:string" minOccurs="0"/>
+          <xs:element name="vcenter_data_center" type="relatedResourceRep" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="computeSystemRestRep" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="discoveredSystemObjectRestRep">
+        <xs:sequence>
+          <xs:element name="tenant" type="relatedResourceRep" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="discoveredSystemObjectRestRep" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="discoveredDataObjectRestRep">
+        <xs:sequence>
+          <xs:element name="compatibility_status" type="xs:string" minOccurs="0"/>
+          <xs:element name="job_discovery_status" type="xs:string" minOccurs="0"/>
+          <xs:element name="last_discovery_run_time" type="xs:long" minOccurs="0"/>
+          <xs:element name="last_discovery_status_message" type="xs:string" minOccurs="0"/>
+          <xs:element name="last_metering_run_time" type="xs:long" minOccurs="0"/>
+          <xs:element name="job_metering_status" type="xs:string" minOccurs="0"/>
+          <xs:element name="next_discovery_run_time" type="xs:long" minOccurs="0"/>
+          <xs:element name="next_metering_run_time" type="xs:long" minOccurs="0"/>
+          <xs:element name="registration_status" type="xs:string" minOccurs="0"/>
+          <xs:element name="success_discovery_time" type="xs:long" minOccurs="0"/>
+          <xs:element name="success_metering_time" type="xs:long" minOccurs="0"/>
+          <xs:element name="system_type" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="discoveredDataObjectRestRep" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="dataObjectRestRep">
+        <xs:sequence>
+          <xs:element name="native_guid" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="initiatorRestRep">
+    <xs:complexContent>
+      <xs:extension base="hostInterfaceRestRep">
+        <xs:sequence>
+          <xs:element name="clustername" type="xs:string" minOccurs="0"/>
+          <xs:element name="hostname" type="xs:string" minOccurs="0"/>
+          <xs:element name="initiator_node" type="xs:string" minOccurs="0"/>
+          <xs:element name="initiator_port" type="xs:string" minOccurs="0"/>
+          <xs:element name="label" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="hostInterfaceRestRep" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="dataObjectRestRep">
+        <xs:sequence>
+          <xs:element name="host" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="protocol" type="xs:string" minOccurs="0"/>
+          <xs:element name="registration_status" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="exportBlockParam">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string"/>
+      <xs:element name="lun" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="fileSystemExportParam">
+    <xs:sequence>
+      <xs:element name="endpoints">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="endpoint" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="mount_point" type="xs:string" minOccurs="0"/>
+      <xs:element name="permissions" type="xs:string" minOccurs="0"/>
+      <xs:element name="protocol" type="xs:string"/>
+      <xs:element name="root_user" type="xs:string" minOccurs="0"/>
+      <xs:element name="type" type="xs:string" minOccurs="0"/>
+      <xs:element name="sub_directory" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="fileSnapshotRestRep">
+    <xs:complexContent>
+      <xs:extension base="fileObjectRestRep">
+        <xs:sequence>
+          <xs:element name="native_id" type="xs:string" minOccurs="0"/>
+          <xs:element name="parent" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="timestamp" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="fileObjectRestRep" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="dataObjectRestRep">
+        <xs:sequence>
+          <xs:element name="mount_path" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="storagePoolBulkRep">
+    <xs:complexContent>
+      <xs:extension base="bulkRestRep">
+        <xs:sequence>
+          <xs:element ref="storage_pool" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="bulkRestRep">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="storagePoolRestRep">
+    <xs:complexContent>
+      <xs:extension base="virtualArrayResourceRestRep">
+        <xs:sequence>
+          <xs:element name="compatibility_status" type="xs:string" minOccurs="0"/>
+          <xs:element name="controller_params" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="controller_param" type="stringHashMapEntry" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="copy_types" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="copy_type" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="drive_types" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="drive_type" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="free_gb" type="xs:long" minOccurs="0"/>
+          <xs:element name="long_term_retention" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="max_pool_utilization_percentage" type="xs:int" minOccurs="0"/>
+          <xs:element name="max_resources" type="xs:int" minOccurs="0"/>
+          <xs:element name="max_thin_pool_subscription_percentage" type="xs:int" minOccurs="0"/>
+          <xs:element name="maximum_thick_volume_size_gb" type="xs:long" minOccurs="0"/>
+          <xs:element name="maximum_thin_volume_size_gb" type="xs:long" minOccurs="0"/>
+          <xs:element name="minimum_thick_volume_size_gb" type="xs:long" minOccurs="0"/>
+          <xs:element name="minimum_thin_volume_size_gb" type="xs:long" minOccurs="0"/>
+          <xs:element name="num_resources" type="xs:int" minOccurs="0"/>
+          <xs:element name="operational_status" type="xs:string" minOccurs="0"/>
+          <xs:element name="percent_subscribed" type="xs:long" minOccurs="0"/>
+          <xs:element name="percent_used" type="xs:long" minOccurs="0"/>
+          <xs:element name="pool_name" type="xs:string" minOccurs="0"/>
+          <xs:element name="pool_service_type" type="xs:string" minOccurs="0"/>
+          <xs:element name="protocols" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="protocol" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="raid_levels" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="raid_level" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="registration_status" type="xs:string" minOccurs="0"/>
+          <xs:element name="storage_system" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="subscribed_gb" type="xs:long" minOccurs="0"/>
+          <xs:element name="supported_resource_types" type="xs:string" minOccurs="0"/>
+          <xs:element name="thin_volume_preallocation_supported" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="tier_utilization_percentages" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="tier_utilization_percentage" type="stringHashMapEntry" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="usable_gb" type="xs:long" minOccurs="0"/>
+          <xs:element name="used_gb" type="xs:long" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="virtualArrayResourceRestRep">
+    <xs:complexContent>
+      <xs:extension base="discoveredDataObjectRestRep">
+        <xs:sequence>
+          <xs:element name="assigned_varrays" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="connected_varrays" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="tagged_varrays" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="stringHashMapEntry">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="value" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="initiatorCreateParam">
+    <xs:complexContent>
+      <xs:extension base="baseInitiatorParam">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="baseInitiatorParam">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="initiator_node" type="xs:string" minOccurs="0"/>
+      <xs:element name="initiator_port" type="xs:string"/>
+      <xs:element name="protocol" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="blockConsistencyGroupRestRep">
+    <xs:complexContent>
+      <xs:extension base="dataObjectRestRep">
+        <xs:sequence>
+          <xs:element name="device_name" type="xs:string" minOccurs="0"/>
+          <xs:element name="link_status" type="xs:string" minOccurs="0"/>
+          <xs:element name="project" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="rp_consistency_group_id" type="xs:string" minOccurs="0"/>
+          <xs:element name="rp_protection_system" type="xs:string" minOccurs="0"/>
+          <xs:element name="storage_controller" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="type" type="xs:string" minOccurs="0"/>
+          <xs:element name="varray" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="volumes" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="volume" type="relatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="tenantResponse">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="link" type="restLinkRep" minOccurs="0"/>
+      <xs:element name="id" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="clusterList">
+    <xs:sequence>
+      <xs:element name="cluster" type="namedRelatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="volumeFullCopyCreateParam">
+    <xs:sequence>
+      <xs:element name="count" type="xs:int" minOccurs="0"/>
+      <xs:element name="create_inactive" type="xs:boolean" default="false" minOccurs="0"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="type" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="aclAssignmentChanges">
+    <xs:sequence>
+      <xs:element name="add" type="aclEntry" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="remove" type="aclEntry" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="aclEntry">
+    <xs:sequence>
+      <xs:element name="privilege" type="xs:string" maxOccurs="unbounded"/>
+      <xs:element name="group" type="xs:string" minOccurs="0"/>
+      <xs:element name="subject_id" type="xs:string" minOccurs="0"/>
+      <xs:element name="tenant" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="userTenantList">
+    <xs:sequence>
+      <xs:element name="tenant" type="userTenant" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="userTenant">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string" minOccurs="0"/>
+      <xs:element name="user_mapping" type="userMapping" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="userMapping">
+    <xs:sequence>
+      <xs:element name="attributes" type="userMappingAttribute" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="domain" type="xs:string" minOccurs="0"/>
+      <xs:element name="groups" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="userMappingAttribute">
+    <xs:sequence>
+      <xs:element name="key" type="xs:string"/>
+      <xs:element name="value" type="xs:string" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="volumeRestRep">
+    <xs:complexContent>
+      <xs:extension base="blockObjectRestRep">
+        <xs:sequence>
+          <xs:element name="access_state" type="xs:string" minOccurs="0"/>
+          <xs:element name="allocated_capacity_gb" type="xs:string" minOccurs="0"/>
+          <xs:element name="auto_tier_policy" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="requested_capacity_gb" type="xs:string" minOccurs="0"/>
+          <xs:element name="high_availability_backing_volumes" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="high_availability_backing_volume" type="relatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="is_composite" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="link_status" type="xs:string" minOccurs="0"/>
+          <xs:element name="storage_pool" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="pre_allocation_size_gb" type="xs:string" minOccurs="0"/>
+          <xs:element name="project" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="protection" type="protectionRestRep" minOccurs="0"/>
+          <xs:element name="provisioned_capacity_gb" type="xs:string" minOccurs="0"/>
+          <xs:element name="tenant" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="thinly_provisioned" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="vpool" type="relatedResourceRep" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="blockObjectRestRep" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="dataObjectRestRep">
+        <xs:sequence>
+          <xs:element name="consistency_group" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="device_label" type="xs:string" minOccurs="0"/>
+          <xs:element name="native_id" type="xs:string" minOccurs="0"/>
+          <xs:element name="protocols" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="protocol" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="storage_controller" type="xs:string" minOccurs="0"/>
+          <xs:element name="varray" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="wwn" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="protectionRestRep">
+    <xs:sequence>
+      <xs:element name="full_copies" type="fullCopyRestRep" minOccurs="0"/>
+      <xs:element name="mirrors" type="mirrorRestRep" minOccurs="0"/>
+      <xs:element name="recoverpoint" type="recoverPointRestRep" minOccurs="0"/>
+      <xs:element name="srdf" type="srdfRestRep" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="fullCopyRestRep">
+    <xs:sequence>
+      <xs:element name="associated_source_volume" type="relatedResourceRep" minOccurs="0"/>
+      <xs:element name="volumes" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="volume" type="virtualArrayRelatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="percent_synced" type="xs:int" minOccurs="0"/>
+      <xs:element name="is_sync_active" type="xs:boolean" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="virtualArrayRelatedResourceRep">
+    <xs:complexContent>
+      <xs:extension base="relatedResourceRep">
+        <xs:sequence>
+          <xs:element name="varray" type="relatedResourceRep" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="mirrorRestRep">
+    <xs:sequence>
+      <xs:element name="native_mirrors" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="native_mirror" type="virtualArrayRelatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="recoverPointRestRep">
+    <xs:sequence>
+      <xs:element name="copy_name" type="xs:string" minOccurs="0"/>
+      <xs:element name="site_name" type="xs:string" minOccurs="0"/>
+      <xs:element name="personality" type="xs:string" minOccurs="0"/>
+      <xs:element name="protection_set" type="relatedResourceRep" minOccurs="0"/>
+      <xs:element name="protection_system" type="relatedResourceRep" minOccurs="0"/>
+      <xs:element name="targets" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="target" type="virtualArrayRelatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="replicationset_name" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="srdfRestRep">
+    <xs:sequence>
+      <xs:element name="associated_source_volume" type="relatedResourceRep" minOccurs="0"/>
+      <xs:element name="personality" type="xs:string" minOccurs="0"/>
+      <xs:element name="volumes" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="volume" type="virtualArrayRelatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="storageSystemSMISUpdateParam">
+    <xs:complexContent>
+      <xs:extension base="storageSystemSMISRequestParam">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="storageSystemSMISRequestParam">
+    <xs:sequence>
+      <xs:element name="ip_address" type="xs:string" minOccurs="0"/>
+      <xs:element name="_name" type="xs:string" minOccurs="0"/>
+      <xs:element name="password" type="xs:string" nillable="true" minOccurs="0"/>
+      <xs:element name="port_number" type="xs:int" minOccurs="0"/>
+      <xs:element name="secondary_ips" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="secondary_ip" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="serial_number" type="xs:string"/>
+      <xs:element name="providers">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="provider" type="xs:string" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="system_type" type="xs:string"/>
+      <xs:element name="user_name" type="xs:string" nillable="true" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="fileShareRestRep">
+    <xs:complexContent>
+      <xs:extension base="fileObjectRestRep">
+        <xs:sequence>
+          <xs:element name="capacity_gb" type="xs:string" minOccurs="0"/>
+          <xs:element name="data_protection" type="xs:string" minOccurs="0"/>
+          <xs:element name="native_id" type="xs:string" minOccurs="0"/>
+          <xs:element name="storage_pool" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="project" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="protocols" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="protocol" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="storage_port" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="storage_system" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="tenant" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="thinly_provisioned" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="used_capacity_gb" type="xs:string" minOccurs="0"/>
+          <xs:element name="varray" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="vpool" type="relatedResourceRep" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="projectBulkRep">
+    <xs:complexContent>
+      <xs:extension base="bulkRestRep">
+        <xs:sequence>
+          <xs:element ref="project" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="projectRestRep">
+    <xs:complexContent>
+      <xs:extension base="dataObjectRestRep">
+        <xs:sequence>
+          <xs:element name="owner" type="xs:string" minOccurs="0"/>
+          <xs:element name="tenant" type="relatedResourceRep" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="protectionSystemRestRep">
+    <xs:complexContent>
+      <xs:extension base="discoveredSystemObjectRestRep">
+        <xs:sequence>
+          <xs:element name="installation_id" type="xs:string" minOccurs="0"/>
+          <xs:element name="ip_address" type="xs:string" minOccurs="0"/>
+          <xs:element name="major_version" type="xs:string" minOccurs="0"/>
+          <xs:element name="minor_version" type="xs:string" minOccurs="0"/>
+          <xs:element name="port_number" type="xs:int" minOccurs="0"/>
+          <xs:element name="reachable" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="secondary_ip" type="xs:string" minOccurs="0"/>
+          <xs:element name="user_name" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="volumeBulkRep">
+    <xs:complexContent>
+      <xs:extension base="bulkRestRep">
+        <xs:sequence>
+          <xs:element ref="volume" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="workflowList">
+    <xs:sequence>
+      <xs:element ref="workflow" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="workflowRestRep">
+    <xs:complexContent>
+      <xs:extension base="dataObjectRestRep">
+        <xs:sequence>
+          <xs:element name="completed" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="completion_message" type="xs:string" minOccurs="0"/>
+          <xs:element name="completion_state" type="xs:string" minOccurs="0"/>
+          <xs:element name="orchestration_controller_name" type="xs:string" minOccurs="0"/>
+          <xs:element name="orchestration_method" type="xs:string" minOccurs="0"/>
+          <xs:element name="orchestration_task_id" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="blockConsistencyGroupUpdate">
+    <xs:sequence>
+      <xs:element name="add_volumes" type="blockConsistencyGroupVolumeList" minOccurs="0"/>
+      <xs:element name="remove_volumes" type="blockConsistencyGroupVolumeList" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="blockConsistencyGroupVolumeList">
+    <xs:sequence>
+      <xs:element name="volume" type="xs:string" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="protectionSystemUpdateRequestParam">
+    <xs:sequence>
+      <xs:element name="ip_address" type="xs:string" minOccurs="0"/>
+      <xs:element name="password" type="xs:string" nillable="true" minOccurs="0"/>
+      <xs:element name="port_number" type="xs:int" minOccurs="0"/>
+      <xs:element name="user_name" type="xs:string" nillable="true" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="storageProviderUpdateParam">
+    <xs:sequence>
+      <xs:element name="interface_type" type="xs:string" minOccurs="0"/>
+      <xs:element name="ip_address" type="xs:string" minOccurs="0"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="password" type="xs:string" minOccurs="0"/>
+      <xs:element name="port_number" type="xs:int" minOccurs="0"/>
+      <xs:element name="use_ssl" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="user_name" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="quotaUpdateParam">
+    <xs:sequence>
+      <xs:element name="quota_enabled" type="xs:boolean"/>
+      <xs:element name="quota_gb" type="xs:long" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="volumeIngest">
+    <xs:sequence>
+      <xs:element name="project" type="xs:string"/>
+      <xs:element name="unmanaged_volume_list" type="xs:string" maxOccurs="unbounded"/>
+      <xs:element name="varray" type="xs:string"/>
+      <xs:element name="vpool" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tenantOrgList">
+    <xs:sequence>
+      <xs:element name="subtenant" type="namedRelatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="certificateChain">
+    <xs:sequence>
+      <xs:element name="chain" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="protectionSystemBulkRep">
+    <xs:complexContent>
+      <xs:extension base="bulkRestRep">
+        <xs:sequence>
+          <xs:element ref="protection_system" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="vcenterDataCenterList">
+    <xs:sequence>
+      <xs:element name="vcenter_data_center" type="namedRelatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="virtualArrayRestRep">
+    <xs:complexContent>
+      <xs:extension base="dataObjectRestRep">
+        <xs:sequence>
+          <xs:element name="auto_san_zoning" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="block_settings" type="blockSettings" minOccurs="0"/>
+          <xs:element name="object_settings" type="objectSettings" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="blockSettings">
+    <xs:sequence>
+      <xs:element name="auto_san_zoning" type="xs:boolean" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="objectSettings">
+    <xs:sequence>
+      <xs:element name="device_registered" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="protection_type" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="storageTierRestRep">
+    <xs:complexContent>
+      <xs:extension base="discoveredDataObjectRestRep">
+        <xs:sequence>
+          <xs:element name="auto_tier_policy" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="disk_drive_technology" type="xs:string" minOccurs="0"/>
+          <xs:element name="enabled_state" type="xs:string" minOccurs="0"/>
+          <xs:element name="percentage" type="xs:string" minOccurs="0"/>
+          <xs:element name="total_capacity" type="xs:long" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="virtualArrayBulkRep">
+    <xs:complexContent>
+      <xs:extension base="bulkRestRep">
+        <xs:sequence>
+          <xs:element ref="varray" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="volumeVirtualPoolChangeParam">
+    <xs:sequence>
+      <xs:element name="consistency_group" type="xs:string" minOccurs="0"/>
+      <xs:element name="protection" type="blockVirtualPoolProtectionParam" minOccurs="0"/>
+      <xs:element name="vpool" type="xs:string"/>
+      <xs:element name="volumes">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="volume" type="xs:string" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="blockVirtualPoolProtectionParam">
+    <xs:complexContent>
+      <xs:extension base="virtualPoolProtectionParam">
+        <xs:sequence>
+          <xs:element name="continuous_copies" type="virtualPoolProtectionMirrorParam" minOccurs="0"/>
+          <xs:element name="recoverpoint" type="virtualPoolProtectionRPParam" minOccurs="0"/>
+          <xs:element name="remote_copies" type="virtualPoolRemoteMirrorProtectionParam" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="virtualPoolProtectionParam">
+    <xs:sequence>
+      <xs:element name="snapshots" type="virtualPoolProtectionSnapshotsParam" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="virtualPoolProtectionMirrorParam">
+    <xs:sequence>
+      <xs:element name="max_native_continuous_copies" type="xs:int" minOccurs="0"/>
+      <xs:element name="protection_mirror_vpool" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="virtualPoolProtectionRPParam">
+    <xs:sequence>
+      <xs:element name="copies" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="protection_varray_vpool" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="source_policy" type="protectionSourcePolicy" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="virtualPoolProtectionVirtualArraySettingsParam">
+    <xs:sequence>
+      <xs:element name="policy" type="protectionCopyPolicy" minOccurs="0"/>
+      <xs:element name="varray" type="xs:string" minOccurs="0"/>
+      <xs:element name="vpool" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="protectionCopyPolicy">
+    <xs:sequence>
+      <xs:element name="journal_size" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="protectionSourcePolicy">
+    <xs:sequence>
+      <xs:element name="journal_size" type="xs:string" minOccurs="0"/>
+      <xs:element name="remote_copy_mode" type="xs:string" minOccurs="0"/>
+      <xs:element name="rpo_type" type="xs:string" minOccurs="0"/>
+      <xs:element name="rpo_value" type="xs:long" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="virtualPoolRemoteMirrorProtectionParam">
+    <xs:sequence>
+      <xs:element name="remote_copy_settings" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="remote_copy_setting" type="virtualPoolRemoteProtectionVirtualArraySettingsParam" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="virtualPoolRemoteProtectionVirtualArraySettingsParam">
+    <xs:sequence>
+      <xs:element name="remote_copy_mode" type="xs:string" minOccurs="0"/>
+      <xs:element name="varray" type="xs:string"/>
+      <xs:element name="vpool" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="virtualPoolProtectionSnapshotsParam">
+    <xs:sequence>
+      <xs:element name="max_native_snapshots" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="vcenterBulkRep">
+    <xs:complexContent>
+      <xs:extension base="bulkRestRep">
+        <xs:sequence>
+          <xs:element ref="vcenter" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="vcenterRestRep">
+    <xs:complexContent>
+      <xs:extension base="computeSystemRestRep">
+        <xs:sequence>
+          <xs:element name="ip_address" type="xs:string" minOccurs="0"/>
+          <xs:element name="os_version" type="xs:string" minOccurs="0"/>
+          <xs:element name="port_number" type="xs:int" minOccurs="0"/>
+          <xs:element name="use_ssl" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="user_name" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="virtualArrayUpdateParam">
+    <xs:complexContent>
+      <xs:extension base="virtualArrayParam">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="virtualArrayParam">
+    <xs:sequence>
+      <xs:element name="auto_san_zoning" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="block_settings" type="blockSettings" minOccurs="0"/>
+      <xs:element name="device_registered" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="object_settings" type="objectSettings" minOccurs="0"/>
+      <xs:element name="protection_type" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="fcZoneReferences">
+    <xs:sequence>
+      <xs:element ref="fc_zone_reference" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="fcZoneReferenceRestRep">
+    <xs:sequence>
+      <xs:element name="fabricId" type="xs:string" minOccurs="0"/>
+      <xs:element name="groupUri" type="xs:string" minOccurs="0"/>
+      <xs:element name="networkSystemUri" type="xs:string" minOccurs="0"/>
+      <xs:element name="pwwnKey" type="xs:string" minOccurs="0"/>
+      <xs:element name="volumeUri" type="xs:string" minOccurs="0"/>
+      <xs:element name="zoneName" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="authnCreateParam">
+    <xs:complexContent>
+      <xs:extension base="authnProviderBaseParam">
+        <xs:sequence>
+          <xs:element name="domains" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="domain" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="group_whitelist_values" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="group_whitelist_value" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="server_urls" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="server_url" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="authnProviderBaseParam" abstract="true">
+    <xs:sequence>
+      <xs:element name="description" type="xs:string" minOccurs="0"/>
+      <xs:element name="disable" type="xs:boolean" default="false" minOccurs="0"/>
+      <xs:element name="group_attribute" type="xs:string" minOccurs="0"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="manager_dn" type="xs:string" minOccurs="0"/>
+      <xs:element name="manager_password" type="xs:string" minOccurs="0"/>
+      <xs:element name="max_page_size" type="xs:int" default="1000" minOccurs="0"/>
+      <xs:element name="mode" type="xs:string" minOccurs="0"/>
+      <xs:element name="search_base" type="xs:string" minOccurs="0"/>
+      <xs:element name="search_filter" type="xs:string" minOccurs="0"/>
+      <xs:element name="search_scope" type="xs:string" default="ONELEVEL" minOccurs="0"/>
+      <xs:element name="validate_certificates" type="xs:boolean" default="false" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="authnUpdateParam">
+    <xs:complexContent>
+      <xs:extension base="authnProviderBaseParam">
+        <xs:sequence>
+          <xs:element name="domain_changes" type="domainChanges" minOccurs="0"/>
+          <xs:element name="group_whitelist_value_changes" type="groupWhitelistValueChanges" minOccurs="0"/>
+          <xs:element name="server_url_changes" type="serverUrlChanges" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="domainChanges">
+    <xs:sequence>
+      <xs:element name="add" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="domain" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="remove" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="domain" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="groupWhitelistValueChanges">
+    <xs:sequence>
+      <xs:element name="add" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="group_whitelist_value" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="remove" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="group_whitelist_value" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="serverUrlChanges">
+    <xs:sequence>
+      <xs:element name="add" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="server_url" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="remove" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="server_url" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="fileShareBulkRep">
+    <xs:complexContent>
+      <xs:extension base="bulkRestRep">
+        <xs:sequence>
+          <xs:element ref="filesystem" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="storageSystemUpdateRequestParam">
+    <xs:sequence>
+      <xs:element name="ip_address" type="xs:string" minOccurs="0"/>
+      <xs:element name="unlimited_resources" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="max_resources" type="xs:int" minOccurs="0"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="password" type="xs:string" nillable="true" minOccurs="0"/>
+      <xs:element name="port_number" type="xs:int" minOccurs="0"/>
+      <xs:element name="smis_password" type="xs:string" minOccurs="0"/>
+      <xs:element name="smis_port_number" type="xs:int" minOccurs="0"/>
+      <xs:element name="smis_provider_ip" type="xs:string" minOccurs="0"/>
+      <xs:element name="smis_use_ssl" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="smis_user_name" type="xs:string" minOccurs="0"/>
+      <xs:element name="user_name" type="xs:string" nillable="true" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="storagePortRestRep">
+    <xs:complexContent>
+      <xs:extension base="virtualArrayResourceRestRep">
+        <xs:sequence>
+          <xs:element name="avg_band_width" type="xs:long" minOccurs="0"/>
+          <xs:element name="compatibility_status" type="xs:string" minOccurs="0"/>
+          <xs:element name="ip_address" type="xs:string" minOccurs="0"/>
+          <xs:element name="network" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="operational_status" type="xs:string" minOccurs="0"/>
+          <xs:element name="port_alias" type="xs:string" minOccurs="0"/>
+          <xs:element name="port_endpoint_id" type="xs:string" minOccurs="0"/>
+          <xs:element name="port_group" type="xs:string" minOccurs="0"/>
+          <xs:element name="port_name" type="xs:string" minOccurs="0"/>
+          <xs:element name="port_network_id" type="xs:string" minOccurs="0"/>
+          <xs:element name="port_speed_gbps" type="xs:long" minOccurs="0"/>
+          <xs:element name="port_type" type="xs:string" minOccurs="0"/>
+          <xs:element name="registration_status" type="xs:string" minOccurs="0"/>
+          <xs:element name="static_load" type="xs:long" minOccurs="0"/>
+          <xs:element name="storage_system" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="tcp_port_number" type="xs:long" minOccurs="0"/>
+          <xs:element name="transport_type" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="fileVirtualPoolParam">
+    <xs:complexContent>
+      <xs:extension base="virtualPoolCommonParam">
+        <xs:sequence>
+          <xs:element name="protection" type="fileVirtualPoolProtectionParam" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="virtualPoolCommonParam">
+    <xs:sequence>
+      <xs:element name="description" type="xs:string" minOccurs="0"/>
+      <xs:element name="long_term_retention" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="protocols">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="protocol" type="xs:string" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="provisioning_type" type="xs:string"/>
+      <xs:element name="system_type" type="xs:string" minOccurs="0"/>
+      <xs:element name="use_matched_pools" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="varrays" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="varray" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="fileVirtualPoolProtectionParam">
+    <xs:complexContent>
+      <xs:extension base="virtualPoolProtectionParam">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="networkSystemCreate">
+    <xs:sequence>
+      <xs:element name="ip_address" type="xs:string" minOccurs="0"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="password" type="xs:string" minOccurs="0"/>
+      <xs:element name="port_number" type="xs:int" minOccurs="0"/>
+      <xs:element name="smis_password" type="xs:string" minOccurs="0"/>
+      <xs:element name="smis_port_number" type="xs:int" minOccurs="0"/>
+      <xs:element name="smis_provider_ip" type="xs:string" minOccurs="0"/>
+      <xs:element name="smis_use_ssl" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="smis_user_name" type="xs:string" minOccurs="0"/>
+      <xs:element name="system_type" type="xs:string"/>
+      <xs:element name="user_name" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="sanZoneCreateParam">
+    <xs:complexContent>
+      <xs:extension base="sanZones">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="sanZones">
+    <xs:sequence>
+      <xs:element ref="san_zone" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="sanZone">
+    <xs:sequence>
+      <xs:element name="members" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="member" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="name" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="fileVirtualPoolRestRep">
+    <xs:complexContent>
+      <xs:extension base="virtualPoolCommonRestRep">
+        <xs:sequence>
+          <xs:element name="long_term_retention" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="protection" type="fileVirtualPoolProtectionParam" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="virtualPoolCommonRestRep">
+    <xs:complexContent>
+      <xs:extension base="dataObjectRestRep">
+        <xs:sequence>
+          <xs:element name="assigned_storage_pools" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="storage_pool" type="relatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="description" type="xs:string" minOccurs="0"/>
+          <xs:element name="invalid_matched_pools" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="storage_pool" type="relatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="matched_storage_pools" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="storage_pool" type="relatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="num_paths" type="xs:int" minOccurs="0"/>
+          <xs:element name="num_resources" type="xs:int" minOccurs="0"/>
+          <xs:element name="protocols" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="protocol" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="provisioning_type" type="xs:string" minOccurs="0"/>
+          <xs:element name="system_type" type="xs:string" minOccurs="0"/>
+          <xs:element name="type" type="xs:string" minOccurs="0"/>
+          <xs:element name="use_matched_pools" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="varrays" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="varray" type="relatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="protectionSystemList">
+    <xs:sequence>
+      <xs:element name="protection_system" type="namedRelatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="bulkIdParam">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="networkUpdate">
+    <xs:sequence>
+      <xs:element name="endpoint_changes" type="endpointChanges" minOccurs="0"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="varray_assignment_changes" type="virtualArrayAssignmentChanges" minOccurs="0"/>
+      <xs:element name="varrays" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="varray" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="endpointChanges">
+    <xs:sequence>
+      <xs:element name="add" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="endpoint" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="remove" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="endpoint" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="virtualArrayAssignmentChanges">
+    <xs:sequence>
+      <xs:element name="add" type="virtualArrayAssignments" minOccurs="0"/>
+      <xs:element name="remove" type="virtualArrayAssignments" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="virtualArrayAssignments">
+    <xs:sequence>
+      <xs:element name="varray" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="mirrorList">
+    <xs:sequence>
+      <xs:element name="mirror" type="namedRelatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="sanZonesRestRep">
+    <xs:sequence>
+      <xs:element ref="san_zone" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="sanZoneRestRep">
+    <xs:sequence>
+      <xs:element name="members" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="member" type="sanZoneMemberRestRep" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="name" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="sanZoneMemberRestRep">
+    <xs:sequence>
+      <xs:element name="alias" type="xs:string" minOccurs="0"/>
+      <xs:element name="wwn" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="authnProviderRestRep">
+    <xs:complexContent>
+      <xs:extension base="dataObjectRestRep">
+        <xs:sequence>
+          <xs:element name="description" type="xs:string" minOccurs="0"/>
+          <xs:element name="disable" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="domains" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="domain" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="group_attribute" type="xs:string" minOccurs="0"/>
+          <xs:element name="group_whitelist_values" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="group_whitelist_value" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="manager_dn" type="xs:string" minOccurs="0"/>
+          <xs:element name="max_page_size" type="xs:int" minOccurs="0"/>
+          <xs:element name="mode" type="xs:string" minOccurs="0"/>
+          <xs:element name="search_base" type="xs:string" minOccurs="0"/>
+          <xs:element name="search_filter" type="xs:string" minOccurs="0"/>
+          <xs:element name="search_scope" type="xs:string" minOccurs="0"/>
+          <xs:element name="server_urls" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="server_url" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="roleAssignmentChanges">
+    <xs:sequence>
+      <xs:element name="add" type="roleAssignmentEntry" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="remove" type="roleAssignmentEntry" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="roleAssignmentEntry">
+    <xs:sequence>
+      <xs:element name="group" type="xs:string" minOccurs="0"/>
+      <xs:element name="role" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="subject_id" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="searchResults">
+    <xs:sequence>
+      <xs:element name="resource" type="searchResultResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="searchResultResourceRep">
+    <xs:complexContent>
+      <xs:extension base="relatedResourceRep">
+        <xs:sequence>
+          <xs:element name="match" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="protectionSystemRequestParam">
+    <xs:sequence>
+      <xs:element name="ip_address" type="xs:string"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="password" type="xs:string" nillable="true"/>
+      <xs:element name="port_number" type="xs:int"/>
+      <xs:element name="registration_mode" type="xs:string" minOccurs="0"/>
+      <xs:element name="system_type" type="xs:string"/>
+      <xs:element name="user_name" type="xs:string" nillable="true"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="wwnAliasesCreateParam">
+    <xs:complexContent>
+      <xs:extension base="wwnAliasesParam">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="wwnAliasesParam">
+    <xs:sequence>
+      <xs:element ref="wwn_alias" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="fabric_id" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="wwnAliasParam">
+    <xs:sequence>
+      <xs:element name="address" type="xs:string" minOccurs="0"/>
+      <xs:element name="name" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="storagePoolList">
+    <xs:sequence>
+      <xs:element name="storage_pool" type="namedRelatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="storagePortBulkRep">
+    <xs:complexContent>
+      <xs:extension base="bulkRestRep">
+        <xs:sequence>
+          <xs:element ref="storage_port" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="migrationRestRep">
+    <xs:complexContent>
+      <xs:extension base="dataObjectRestRep">
+        <xs:sequence>
+          <xs:element name="percent_done" type="xs:string" minOccurs="0"/>
+          <xs:element name="source" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="start_time" type="xs:string" minOccurs="0"/>
+          <xs:element name="status" type="xs:string" minOccurs="0"/>
+          <xs:element name="target" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="volume" type="relatedResourceRep" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="bulkDeleteParam">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="storageTierList">
+    <xs:sequence>
+      <xs:element name="storage_tier" type="namedRelatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ipInterfaceRestRep">
+    <xs:complexContent>
+      <xs:extension base="hostInterfaceRestRep">
+        <xs:sequence>
+          <xs:element name="ip_address" type="xs:string" minOccurs="0"/>
+          <xs:element name="name" type="xs:string" minOccurs="0"/>
+          <xs:element name="netmask" type="xs:string" minOccurs="0"/>
+          <xs:element name="prefix_length" type="xs:int" minOccurs="0"/>
+          <xs:element name="scope_id" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="blockMigrationBulkRep">
+    <xs:complexContent>
+      <xs:extension base="bulkRestRep">
+        <xs:sequence>
+          <xs:element ref="block_migration" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="authnProviderList">
+    <xs:sequence>
+      <xs:element name="authnprovider" type="namedRelatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="storagePortUpdate">
+    <xs:complexContent>
+      <xs:extension base="virtualArrayResourceUpdateParam">
+        <xs:sequence>
+          <xs:element name="network" type="xs:string" minOccurs="0"/>
+          <xs:element name="port_network_id" type="xs:string" nillable="true" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="virtualArrayResourceUpdateParam">
+    <xs:sequence>
+      <xs:element name="varray_assignment_changes" type="virtualArrayAssignmentChanges" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="blockSnapshotBulkRep">
+    <xs:complexContent>
+      <xs:extension base="bulkRestRep">
+        <xs:sequence>
+          <xs:element ref="block_snapshot" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="blockSnapshotRestRep">
+    <xs:complexContent>
+      <xs:extension base="blockObjectRestRep">
+        <xs:sequence>
+          <xs:element name="volume_native_id" type="xs:string" minOccurs="0"/>
+          <xs:element name="parent" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="project" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="source_native_id" type="xs:string" minOccurs="0"/>
+          <xs:element name="is_sync_active" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="workflowStepRestRep">
+    <xs:complexContent>
+      <xs:extension base="dataObjectRestRep">
+        <xs:sequence>
+          <xs:element name="controller_name" type="xs:string" minOccurs="0"/>
+          <xs:element name="description" type="xs:string" minOccurs="0"/>
+          <xs:element name="end_time" type="xs:dateTime" minOccurs="0"/>
+          <xs:element name="execute_method" type="xs:string" minOccurs="0"/>
+          <xs:element name="message" type="xs:string" minOccurs="0"/>
+          <xs:element name="start_time" type="xs:dateTime" minOccurs="0"/>
+          <xs:element name="state" type="xs:string" minOccurs="0"/>
+          <xs:element name="step_group" type="xs:string" minOccurs="0"/>
+          <xs:element name="step_id" type="xs:string" minOccurs="0"/>
+          <xs:element name="system_id" type="xs:string" minOccurs="0"/>
+          <xs:element name="system_type" type="xs:string" minOccurs="0"/>
+          <xs:element name="wait_for" type="xs:string" minOccurs="0"/>
+          <xs:element name="workflow" type="relatedResourceRep" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="fileSystemIngest">
+    <xs:sequence>
+      <xs:element name="project" type="xs:string"/>
+      <xs:element name="unmanaged_filesystem_list" type="xs:string" maxOccurs="unbounded"/>
+      <xs:element name="varray" type="xs:string"/>
+      <xs:element name="vpool" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="decommissionedResources">
+    <xs:sequence>
+      <xs:element ref="decommissioned_resource" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="decommissionedResourceRep">
+    <xs:sequence>
+      <xs:element name="decommissioned_id" type="xs:string" minOccurs="0"/>
+      <xs:element name="native_guid" type="xs:string" minOccurs="0"/>
+      <xs:element name="type" type="xs:string" minOccurs="0"/>
+      <xs:element name="user" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="storageTierBulkRep">
+    <xs:complexContent>
+      <xs:extension base="bulkRestRep">
+        <xs:sequence>
+          <xs:element ref="storage_tier" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="blockConsistencyGroupCreate">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="project" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="networkBulkRep">
+    <xs:complexContent>
+      <xs:extension base="bulkRestRep">
+        <xs:sequence>
+          <xs:element ref="network" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="networkRestRep">
+    <xs:complexContent>
+      <xs:extension base="discoveredDataObjectRestRep">
+        <xs:sequence>
+          <xs:element name="assigned_varrays" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="assigned_varray" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="connected_varrays" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="connected_varray" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="discovered" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="endpoints" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="endpoint" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="endpoints_discovered" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="endpoint_discovered" type="endpointAliasRestRep" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="fabric_id" type="xs:string" minOccurs="0"/>
+          <xs:element name="network_systems" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="network_system" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="registration_status" type="xs:string" minOccurs="0"/>
+          <xs:element name="routed_networks" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="routed_network" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="transport_type" type="xs:string" minOccurs="0"/>
+          <xs:element name="varray" type="relatedResourceRep" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="endpointAliasRestRep">
+    <xs:complexContent>
+      <xs:extension base="stringHashMapEntry">
+        <xs:sequence>
+          <xs:element name="alias" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="fileExportUpdateParam">
+    <xs:sequence>
+      <xs:element name="add" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="add" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="remove" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="remove" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="virtualArrayList">
+    <xs:sequence>
+      <xs:element name="varray" type="namedRelatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="clusterBulkRep">
+    <xs:complexContent>
+      <xs:extension base="bulkRestRep">
+        <xs:sequence>
+          <xs:element ref="cluster" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="storageProviderRestRep">
+    <xs:complexContent>
+      <xs:extension base="dataObjectRestRep">
+        <xs:sequence>
+          <xs:element name="compatibility_status" type="xs:string" minOccurs="0"/>
+          <xs:element name="connection_status" type="xs:string" minOccurs="0"/>
+          <xs:element name="description" type="xs:string" minOccurs="0"/>
+          <xs:element name="ip_address" type="xs:string" minOccurs="0"/>
+          <xs:element name="interface" type="xs:string" minOccurs="0"/>
+          <xs:element name="last_scan_status_message" type="xs:string" minOccurs="0"/>
+          <xs:element name="last_scan_time" type="xs:long" minOccurs="0"/>
+          <xs:element name="manufacturer" type="xs:string" minOccurs="0"/>
+          <xs:element name="next_scan_time" type="xs:long" minOccurs="0"/>
+          <xs:element name="port_number" type="xs:int" minOccurs="0"/>
+          <xs:element name="provider_id" type="xs:string" minOccurs="0"/>
+          <xs:element name="registration_status" type="xs:string" minOccurs="0"/>
+          <xs:element name="job_scan_status" type="xs:string" minOccurs="0"/>
+          <xs:element name="storage_systems" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="storage_system" type="relatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="success_scan_time" type="xs:long" minOccurs="0"/>
+          <xs:element name="use_ssl" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="user_name" type="xs:string" minOccurs="0"/>
+          <xs:element name="version_string" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="copiesParam">
+    <xs:sequence>
+      <xs:element ref="copy" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="copy">
+    <xs:sequence>
+      <xs:element name="copyID" type="xs:string" minOccurs="0"/>
+      <xs:element name="count" type="xs:int" minOccurs="0"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="sync" type="xs:string" default="false" minOccurs="0"/>
+      <xs:element name="type" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="unManagedFileBulkRep">
+    <xs:complexContent>
+      <xs:extension base="bulkRestRep">
+        <xs:sequence>
+          <xs:element name="unmanaged-filesystems" type="unManagedFileSystemRestRep" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="unManagedFileSystemRestRep">
+    <xs:complexContent>
+      <xs:extension base="dataObjectRestRep">
+        <xs:sequence>
+          <xs:element name="unmanaged_filesystems_characterstics" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="unmanaged_filesystem_characterstic" type="stringHashMapEntry" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="unmanaged_filesystems_info" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="unmanaged_filesystem_info" type="entry" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="native_guid" type="xs:string" minOccurs="0"/>
+          <xs:element name="storage_pool" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="storage_system" type="relatedResourceRep" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="entry">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="value" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="fileSystemExportList">
+    <xs:sequence>
+      <xs:element ref="filesystem_export" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="vcenterCreateParam">
+    <xs:complexContent>
+      <xs:extension base="vcenterParam">
+        <xs:sequence>
+          <xs:element name="ip_address" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="vcenterParam" abstract="true">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="os_version" type="xs:string" minOccurs="0"/>
+      <xs:element name="password" type="xs:string" minOccurs="0"/>
+      <xs:element name="port_number" type="xs:int" minOccurs="0"/>
+      <xs:element name="use_ssl" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="user_name" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="namedFileSystemList">
+    <xs:sequence>
+      <xs:element name="filesystem" type="namedRelatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ipInterfaceList">
+    <xs:sequence>
+      <xs:element name="ip_interface" type="namedRelatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="wwnAliasUpdateParams">
+    <xs:sequence>
+      <xs:element name="fabric_id" type="xs:string" minOccurs="0"/>
+      <xs:element name="wwn_alias_update" type="wwnAliasUpdateParam" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="wwnAliasUpdateParam">
+    <xs:complexContent>
+      <xs:extension base="wwnAliasParam">
+        <xs:sequence>
+          <xs:element name="new_address" type="xs:string" minOccurs="0"/>
+          <xs:element name="new_name" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="hostUpdateParam">
+    <xs:complexContent>
+      <xs:extension base="hostParam">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="hostParam" abstract="true">
+    <xs:sequence>
+      <xs:element name="cluster" type="xs:string" minOccurs="0"/>
+      <xs:element name="discoverable" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="host_name" type="xs:string" minOccurs="0"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="os_version" type="xs:string" minOccurs="0"/>
+      <xs:element name="password" type="xs:string" minOccurs="0"/>
+      <xs:element name="port_number" type="xs:int" minOccurs="0"/>
+      <xs:element name="project" type="xs:string" minOccurs="0"/>
+      <xs:element name="type" type="xs:string" minOccurs="0"/>
+      <xs:element name="use_ssl" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="user_name" type="xs:string" minOccurs="0"/>
+      <xs:element name="vcenter_data_center" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="virtualPoolList">
+    <xs:sequence>
+      <xs:element name="virtualpool" type="namedRelatedVirtualPoolRep" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="namedRelatedVirtualPoolRep">
+    <xs:complexContent>
+      <xs:extension base="namedRelatedResourceRep">
+        <xs:sequence>
+          <xs:element name="vpool_type" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="storageSystemRequestParam">
+    <xs:sequence>
+      <xs:element name="ip_address" type="xs:string"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="password" type="xs:string" nillable="true"/>
+      <xs:element name="port_number" type="xs:int"/>
+      <xs:element name="serial_number" type="xs:string" minOccurs="0"/>
+      <xs:element name="smis_password" type="xs:string" minOccurs="0"/>
+      <xs:element name="smis_port_number" type="xs:int" minOccurs="0"/>
+      <xs:element name="smis_provider_ip" type="xs:string" minOccurs="0"/>
+      <xs:element name="smis_use_ssl" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="smis_user_name" type="xs:string" minOccurs="0"/>
+      <xs:element name="system_type" type="xs:string"/>
+      <xs:element name="user_name" type="xs:string" nillable="true"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="virtualDataCenterModifyParam">
+    <xs:sequence>
+      <xs:element name="api_endpoint" type="xs:string" minOccurs="0"/>
+      <xs:element name="description" type="xs:string" minOccurs="0"/>
+      <xs:element name="geo_command_endpoint" type="xs:string" minOccurs="0"/>
+      <xs:element name="geo_data_endpoint" type="xs:string" minOccurs="0"/>
+      <xs:element name="key_and_certificate" type="keyAndCertificateChain" minOccurs="0"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="rotate_keycertchain" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="secret_key" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="keyAndCertificateChain">
+    <xs:sequence>
+      <xs:element name="certificate_chain" type="xs:string" minOccurs="0"/>
+      <xs:element name="private_key" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tenantOrgRestRep">
+    <xs:complexContent>
+      <xs:extension base="dataObjectRestRep">
+        <xs:sequence>
+          <xs:element name="description" type="xs:string" minOccurs="0"/>
+          <xs:element name="namespace" type="xs:string" minOccurs="0"/>
+          <xs:element name="parent_tenant" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="user_mappings" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="user_mapping" type="userMappingParam" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="userMappingParam">
+    <xs:sequence>
+      <xs:element name="attributes" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="attribute" type="userMappingAttributeParam" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="domain" type="xs:string"/>
+      <xs:element name="groups" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="group" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="userMappingAttributeParam">
+    <xs:sequence>
+      <xs:element name="key" type="xs:string"/>
+      <xs:element name="value" type="xs:string" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="protectionSystemConnectivityRestRep">
+    <xs:sequence>
+      <xs:element name="protection_site" type="protectionSystemConnectivitySiteRestRep" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="protection_system" type="namedRelatedResourceRep" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="protectionSystemConnectivitySiteRestRep">
+    <xs:sequence>
+      <xs:element name="site_id" type="xs:string" minOccurs="0"/>
+      <xs:element name="storage_systems" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="storage_system" type="relatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tenantUpdateParam">
+    <xs:complexContent>
+      <xs:extension base="tenantParam">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string" minOccurs="0"/>
+          <xs:element name="user_mapping_changes" type="userMappingChanges" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="tenantParam" abstract="true">
+    <xs:sequence>
+      <xs:element name="description" type="xs:string" minOccurs="0"/>
+      <xs:element name="web_storage_default_project" type="xs:string" minOccurs="0"/>
+      <xs:element name="web_storage_default_vpool" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="userMappingChanges">
+    <xs:sequence>
+      <xs:element name="add" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="user_mapping" type="userMappingParam" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="remove" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="user_mapping" type="userMappingParam" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="networkSystemBulkRep">
+    <xs:complexContent>
+      <xs:extension base="bulkRestRep">
+        <xs:sequence>
+          <xs:element ref="network_system" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="networkSystemRestRep">
+    <xs:complexContent>
+      <xs:extension base="discoveredSystemObjectRestRep">
+        <xs:sequence>
+          <xs:element name="ip_address" type="xs:string" minOccurs="0"/>
+          <xs:element name="port_number" type="xs:int" minOccurs="0"/>
+          <xs:element name="secondary_ip" type="xs:string" minOccurs="0"/>
+          <xs:element name="serial_number" type="xs:string" minOccurs="0"/>
+          <xs:element name="smis_port_number" type="xs:int" minOccurs="0"/>
+          <xs:element name="smis_provider_ip" type="xs:string" minOccurs="0"/>
+          <xs:element name="smis_use_ssl" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="smis_user_name" type="xs:string" minOccurs="0"/>
+          <xs:element name="uptime" type="xs:string" minOccurs="0"/>
+          <xs:element name="user_name" type="xs:string" minOccurs="0"/>
+          <xs:element name="version" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="vcenterList">
+    <xs:sequence>
+      <xs:element name="vcenter" type="namedRelatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ipInterfaceUpdateParam">
+    <xs:complexContent>
+      <xs:extension base="ipInterfaceParam">
+        <xs:sequence>
+          <xs:element name="ip_address" type="xs:string" minOccurs="0"/>
+          <xs:element name="protocol" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ipInterfaceParam" abstract="true">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="netmask" type="xs:int" minOccurs="0"/>
+      <xs:element name="prefix_length" type="xs:int" minOccurs="0"/>
+      <xs:element name="scope_id" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="storageProviderList">
+    <xs:sequence>
+      <xs:element name="storage_provider" type="namedRelatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="blockConsistencyGroupSnapshotCreate">
+    <xs:sequence>
+      <xs:element name="create_inactive" type="xs:boolean" default="false" minOccurs="0"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ipInterfaceBulkRep">
+    <xs:complexContent>
+      <xs:extension base="bulkRestRep">
+        <xs:sequence>
+          <xs:element ref="ip_interface" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="sanZonesDeleteParam">
+    <xs:complexContent>
+      <xs:extension base="sanZones">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="taskList">
+    <xs:sequence>
+      <xs:element ref="task" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="taskResourceRep">
+    <xs:sequence>
+      <xs:element name="associated_resources" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="associated_resource" type="namedRelatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="description" type="xs:string" minOccurs="0"/>
+      <xs:element name="end_time" type="xs:long" minOccurs="0"/>
+      <xs:element name="message" type="xs:string" minOccurs="0"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="op_id" type="xs:string" minOccurs="0"/>
+      <xs:element name="resource" type="namedRelatedResourceRep" minOccurs="0"/>
+      <xs:element name="link" type="restLinkRep" minOccurs="0"/>
+      <xs:element name="service_error" type="serviceErrorRestRep" minOccurs="0"/>
+      <xs:element name="start_time" type="xs:long" minOccurs="0"/>
+      <xs:element name="state" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="serviceErrorRestRep">
+    <xs:sequence>
+      <xs:element name="code" type="xs:int"/>
+      <xs:element name="description" type="xs:string"/>
+      <xs:element name="details" type="xs:string"/>
+      <xs:element name="retryable" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="autoTierPolicyList">
+    <xs:sequence>
+      <xs:element name="auto_tier_policy" type="namedRelatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="unManagedFileSystemList">
+    <xs:sequence>
+      <xs:element name="unmanaged_filesystem" type="relatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="volumeExpandParam">
+    <xs:sequence>
+      <xs:element name="new_size" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="storagePoolUpdate">
+    <xs:complexContent>
+      <xs:extension base="virtualArrayResourceUpdateParam">
+        <xs:sequence>
+          <xs:element name="unlimited_resources" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="max_pool_utilization_percentage" type="xs:int" minOccurs="0"/>
+          <xs:element name="max_resources" type="xs:int" minOccurs="0"/>
+          <xs:element name="max_thin_pool_subscription_percentage" type="xs:int" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="fileVirtualPoolBulkRep">
+    <xs:complexContent>
+      <xs:extension base="bulkRestRep">
+        <xs:sequence>
+          <xs:element ref="file_vpool" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="quotaInfo">
+    <xs:sequence>
+      <xs:element name="current_capacity" type="xs:long"/>
+      <xs:element name="enabled" type="xs:boolean"/>
+      <xs:element name="limited_resource" type="namedRelatedResourceRep" minOccurs="0"/>
+      <xs:element name="quota_gb" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="networkCreate">
+    <xs:sequence>
+      <xs:element name="endpoints" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="endpoint" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="transport_type" type="xs:string"/>
+      <xs:element name="varrays" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="varray" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="virtualPoolChangeList">
+    <xs:sequence>
+      <xs:element name="vpool_change" type="virtualPoolChangeRep" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="virtualPoolChangeRep">
+    <xs:complexContent>
+      <xs:extension base="namedRelatedVirtualPoolRep">
+        <xs:sequence>
+          <xs:element name="allowed" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="allowed_change_operation" type="stringHashMapEntry" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="not_allowed_reason" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ProjectUpdateParam">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="owner" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="stepList">
+    <xs:sequence>
+      <xs:element ref="workflow_step" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="vdcCapacities">
+    <xs:sequence>
+      <xs:element name="varrays" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="varray" type="virtualArrayVirtualPoolCapacity" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="virtualArrayVirtualPoolCapacity">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string" minOccurs="0"/>
+      <xs:element name="varray_vpool_capacity" type="virtualPoolCapacity" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="virtualPoolCapacity">
+    <xs:sequence>
+      <xs:element ref="capacity" minOccurs="0"/>
+      <xs:element name="id" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="capacityResponse">
+    <xs:sequence>
+      <xs:element name="free_gb" type="xs:string" minOccurs="0"/>
+      <xs:element name="net_free_gb" type="xs:string" minOccurs="0"/>
+      <xs:element name="percent_provisioned" type="xs:string" minOccurs="0"/>
+      <xs:element name="percent_used" type="xs:string" minOccurs="0"/>
+      <xs:element name="provisioned_gb" type="xs:string" minOccurs="0"/>
+      <xs:element name="used_gb" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="storageProviderCreateParam">
+    <xs:sequence>
+      <xs:element name="interface_type" type="xs:string"/>
+      <xs:element name="ip_address" type="xs:string"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="password" type="xs:string"/>
+      <xs:element name="port_number" type="xs:int"/>
+      <xs:element name="sio_cli" type="xs:string" minOccurs="0"/>
+      <xs:element name="use_ssl" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="user_name" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="virtualDataCenterList">
+    <xs:sequence>
+      <xs:element name="virtual_data_center" type="namedRelatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="wwnAliasesDeleteParam">
+    <xs:complexContent>
+      <xs:extension base="wwnAliasesParam">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="projectElement">
+    <xs:complexContent>
+      <xs:extension base="namedRelatedResourceRep">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="networkSystemList">
+    <xs:sequence>
+      <xs:element name="network_system" type="namedRelatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="virtualDataCenterAddParam">
+    <xs:sequence>
+      <xs:element name="api_endpoint" type="xs:string" minOccurs="0"/>
+      <xs:element name="certificate_chain" type="xs:string" minOccurs="0"/>
+      <xs:element name="description" type="xs:string" minOccurs="0"/>
+      <xs:element name="geo_command_endpoint" type="xs:string" minOccurs="0"/>
+      <xs:element name="geo_data_endpoint" type="xs:string" minOccurs="0"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="secret_key" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tags">
+    <xs:sequence>
+      <xs:element name="tag" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="fileSnapshotBulkRep">
+    <xs:complexContent>
+      <xs:extension base="bulkRestRep">
+        <xs:sequence>
+          <xs:element ref="file_snapshot" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="migrationList">
+    <xs:sequence>
+      <xs:element name="migration" type="namedRelatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="blockVirtualPoolParam">
+    <xs:complexContent>
+      <xs:extension base="virtualPoolCommonParam">
+        <xs:sequence>
+          <xs:element name="auto_tiering_policy_name" type="xs:string" minOccurs="0"/>
+          <xs:element name="drive_type" type="xs:string" minOccurs="0"/>
+          <xs:element name="expandable" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="fast_expansion" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="high_availability" type="virtualPoolHighAvailabilityParam" minOccurs="0"/>
+          <xs:element name="max_paths" type="xs:int" minOccurs="0"/>
+          <xs:element name="min_paths" type="xs:int" minOccurs="0"/>
+          <xs:element name="multi_volume_consistency" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="num_paths" type="xs:int" minOccurs="0"/>
+          <xs:element name="paths_per_initiator" type="xs:int" minOccurs="0"/>
+          <xs:element name="protection" type="blockVirtualPoolProtectionParam" minOccurs="0"/>
+          <xs:element name="raid_levels" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="raid_level" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="thin_volume_preallocation_percentage" type="xs:int" minOccurs="0"/>
+          <xs:element name="unique_auto_tier_policy_names" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="virtualPoolHighAvailabilityParam">
+    <xs:sequence>
+      <xs:element name="ha_varray_vpool" type="virtualArrayVirtualPoolMapEntry" minOccurs="0"/>
+      <xs:element name="type" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="virtualArrayVirtualPoolMapEntry">
+    <xs:sequence>
+      <xs:element name="useAsRecoverPointSource" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="varray" type="xs:string" minOccurs="0"/>
+      <xs:element name="vpool" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="storageSystemConnectivityList">
+    <xs:sequence>
+      <xs:element ref="storage_connectivity" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="storageSystemConnectivityRestRep">
+    <xs:sequence>
+      <xs:element name="connection_type" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="protection_system" type="namedRelatedResourceRep" minOccurs="0"/>
+      <xs:element name="storage_system" type="namedRelatedResourceRep" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="storageProviderBulkRep">
+    <xs:complexContent>
+      <xs:extension base="bulkRestRep">
+        <xs:sequence>
+          <xs:element ref="storage_provider" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="networkEndpointParam">
+    <xs:sequence>
+      <xs:element name="endpoints">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="endpoint" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="op" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="relatedStoragePool">
+    <xs:sequence>
+      <xs:element name="storage_pool" type="namedRelatedResourceRep" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="clusterUpdateParam">
+    <xs:complexContent>
+      <xs:extension base="clusterParam">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="clusterParam" abstract="true">
+    <xs:sequence>
+      <xs:element name="project" type="xs:string" minOccurs="0"/>
+      <xs:element name="vcenter_data_center" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="blockVirtualPoolBulkRep">
+    <xs:complexContent>
+      <xs:extension base="bulkRestRep">
+        <xs:sequence>
+          <xs:element ref="block_vpool" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="blockVirtualPoolRestRep">
+    <xs:complexContent>
+      <xs:extension base="virtualPoolCommonRestRep">
+        <xs:sequence>
+          <xs:element name="auto_tiering_policy_name" type="xs:string" minOccurs="0"/>
+          <xs:element name="drive_type" type="xs:string" minOccurs="0"/>
+          <xs:element name="expandable" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="fast_expansion" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="high_availability" type="virtualPoolHighAvailabilityParam" minOccurs="0"/>
+          <xs:element name="max_paths" type="xs:int" minOccurs="0"/>
+          <xs:element name="min_paths" type="xs:int" minOccurs="0"/>
+          <xs:element name="multi_volume_consistency" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="paths_per_initiator" type="xs:int" minOccurs="0"/>
+          <xs:element name="protection" type="blockVirtualPoolProtectionParam" minOccurs="0"/>
+          <xs:element name="raid_levels" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="raid_level" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="thin_volume_preallocation_percentage" type="xs:int" minOccurs="0"/>
+          <xs:element name="unique_auto_tier_policy_names" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="unManagedVolumeList">
+    <xs:sequence>
+      <xs:element name="unmanaged_volume" type="relatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ipInterfaceCreateParam">
+    <xs:complexContent>
+      <xs:extension base="ipInterfaceParam">
+        <xs:sequence>
+          <xs:element name="ip_address" type="xs:string"/>
+          <xs:element name="protocol" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="fileSystemShareList">
+    <xs:sequence>
+      <xs:element name="smb_share" type="smbShareResponse" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="smbShareResponse">
+    <xs:complexContent>
+      <xs:extension base="fileSystemShareBase">
+        <xs:sequence>
+          <xs:element name="mount_point" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="virtualArrayInternalFlags">
+    <xs:sequence>
+      <xs:element name="deviceRegistered" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="protectionType" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tenantCreateParam">
+    <xs:complexContent>
+      <xs:extension base="tenantParam">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="user_mappings" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="user_mapping" type="userMappingParam" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="smisProviderRestRep">
+    <xs:complexContent>
+      <xs:extension base="dataObjectRestRep">
+        <xs:sequence>
+          <xs:element name="compatibility_status" type="xs:string" minOccurs="0"/>
+          <xs:element name="connection_status" type="xs:string" minOccurs="0"/>
+          <xs:element name="description" type="xs:string" minOccurs="0"/>
+          <xs:element name="ip_address" type="xs:string" minOccurs="0"/>
+          <xs:element name="last_scan_status_message" type="xs:string" minOccurs="0"/>
+          <xs:element name="last_scan_time" type="xs:long" minOccurs="0"/>
+          <xs:element name="manufacturer" type="xs:string" minOccurs="0"/>
+          <xs:element name="next_scan_time" type="xs:long" minOccurs="0"/>
+          <xs:element name="port_number" type="xs:int" minOccurs="0"/>
+          <xs:element name="provider_id" type="xs:string" minOccurs="0"/>
+          <xs:element name="registration_status" type="xs:string" minOccurs="0"/>
+          <xs:element name="job_scan_status" type="xs:string" minOccurs="0"/>
+          <xs:element name="storage_systems" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="storage_system" type="relatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="success_scan_time" type="xs:long" minOccurs="0"/>
+          <xs:element name="use_ssl" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="user_name" type="xs:string" minOccurs="0"/>
+          <xs:element name="version_string" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="tenantOrgBulkRep">
+    <xs:complexContent>
+      <xs:extension base="bulkRestRep">
+        <xs:sequence>
+          <xs:element ref="tenant" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="fileVirtualPoolUpdateParam">
+    <xs:complexContent>
+      <xs:extension base="virtualPoolUpdateParam">
+        <xs:sequence>
+          <xs:element name="long_term_retention" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="protection" type="fileVirtualPoolProtectionParam" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="virtualPoolUpdateParam">
+    <xs:sequence>
+      <xs:element name="description" type="xs:string" minOccurs="0"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="protocol_changes" type="protocolChanges" minOccurs="0"/>
+      <xs:element name="provisioning_type" type="xs:string" minOccurs="0"/>
+      <xs:element name="system_type" type="xs:string" minOccurs="0"/>
+      <xs:element name="use_matched_pools" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="varray_changes" type="virtualArrayAssignmentChanges" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="protocolChanges">
+    <xs:sequence>
+      <xs:element name="add" type="protocolAssignments" minOccurs="0"/>
+      <xs:element name="remove" type="protocolAssignments" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="protocolAssignments">
+    <xs:sequence>
+      <xs:element name="protocol" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="managedResourcesCapacity">
+    <xs:sequence>
+      <xs:element name="resourceCapacityList" type="managedResourceCapacity" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="managedResourceCapacity">
+    <xs:sequence>
+      <xs:element name="nResources" type="xs:long"/>
+      <xs:element name="resourceCapacity" type="xs:double"/>
+      <xs:element name="type" type="capacityResourceType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="fabrics">
+    <xs:sequence>
+      <xs:element name="fabric" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="exportUpdateParam">
+    <xs:sequence>
+      <xs:element name="cluster_changes" type="clustersUpdateParam" minOccurs="0"/>
+      <xs:element name="host_changes" type="hostsUpdateParam" minOccurs="0"/>
+      <xs:element name="initiator_changes" type="initiatorsUpdateParam" minOccurs="0"/>
+      <xs:element name="volume_changes" type="volumeUpdateParam" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="clustersUpdateParam">
+    <xs:complexContent>
+      <xs:extension base="updateParam">
+        <xs:sequence>
+          <xs:element name="add" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="cluster" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="remove" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="cluster" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="updateParam" abstract="true">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="hostsUpdateParam">
+    <xs:complexContent>
+      <xs:extension base="updateParam">
+        <xs:sequence>
+          <xs:element name="add" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="host" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="remove" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="host" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="initiatorsUpdateParam">
+    <xs:complexContent>
+      <xs:extension base="updateParam">
+        <xs:sequence>
+          <xs:element name="add" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="initiator" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="remove" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="initiator" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="volumeUpdateParam">
+    <xs:sequence>
+      <xs:element name="add" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="volume" type="volumeParam" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="remove" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="volume" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="volumeParam">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string"/>
+      <xs:element name="lun" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="userInfo">
+    <xs:sequence>
+      <xs:element name="common_name" type="xs:string" minOccurs="0"/>
+      <xs:element name="distinguished_name" type="xs:string" minOccurs="0"/>
+      <xs:element name="home_tenant_roles" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="home_tenant_role" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="subtenant_roles" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="subtenant" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="tenant" type="xs:string" minOccurs="0"/>
+      <xs:element name="vdc_roles" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="vdc_role" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="subTenantRoles">
+    <xs:sequence>
+      <xs:element name="roles" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="role" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="tenant" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="initiatorList">
+    <xs:sequence>
+      <xs:element name="initiator" type="namedRelatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="migrationParam">
+    <xs:sequence>
+      <xs:element name="source_storage_system" type="xs:string"/>
+      <xs:element name="target_storage_system" type="xs:string"/>
+      <xs:element name="vpool" type="xs:string" minOccurs="0"/>
+      <xs:element name="volume" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="networkSystemUpdate">
+    <xs:sequence>
+      <xs:element name="ip_address" type="xs:string" minOccurs="0"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="password" type="xs:string" minOccurs="0"/>
+      <xs:element name="port_number" type="xs:int" minOccurs="0"/>
+      <xs:element name="smis_password" type="xs:string" minOccurs="0"/>
+      <xs:element name="smis_port_number" type="xs:int" minOccurs="0"/>
+      <xs:element name="smis_provider_ip" type="xs:string" minOccurs="0"/>
+      <xs:element name="smis_use_ssl" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="smis_user_name" type="xs:string" minOccurs="0"/>
+      <xs:element name="user_name" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="roleAssignments">
+    <xs:sequence>
+      <xs:element name="role_assignment" type="roleAssignmentEntry" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="link" type="restLinkRep" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="exportGroupBulkRep">
+    <xs:complexContent>
+      <xs:extension base="bulkRestRep">
+        <xs:sequence>
+          <xs:element name="exportgroup" type="exportGroupRestRep" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="virtualPoolChangeParam">
+    <xs:sequence>
+      <xs:element name="consistency_group" type="xs:string" minOccurs="0"/>
+      <xs:element name="protection" type="blockVirtualPoolProtectionParam" minOccurs="0"/>
+      <xs:element name="vpool" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="smisProviderBulkRep">
+    <xs:complexContent>
+      <xs:extension base="bulkRestRep">
+        <xs:sequence>
+          <xs:element ref="smis_provider" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="hostList">
+    <xs:sequence>
+      <xs:element name="host" type="namedRelatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="fileSystemExpandParam">
+    <xs:sequence>
+      <xs:element name="new_size" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="virtualArrayChangeParam">
+    <xs:sequence>
+      <xs:element name="varray" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="fcEndpoints">
+    <xs:sequence>
+      <xs:element name="fc_endpoint" type="fcEndpointRestRep" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="fcEndpointRestRep">
+    <xs:complexContent>
+      <xs:extension base="dataObjectRestRep">
+        <xs:sequence>
+          <xs:element name="fabric_id" type="xs:string" minOccurs="0"/>
+          <xs:element name="fabric_wwn" type="xs:string" minOccurs="0"/>
+          <xs:element name="fcid" type="xs:string" minOccurs="0"/>
+          <xs:element name="networkDevice" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="remote_node_name" type="xs:string" minOccurs="0"/>
+          <xs:element name="remote_port_alias" type="xs:string" minOccurs="0"/>
+          <xs:element name="remote_port_name" type="xs:string" minOccurs="0"/>
+          <xs:element name="switch_interface" type="xs:string" minOccurs="0"/>
+          <xs:element name="switch_name" type="xs:string" minOccurs="0"/>
+          <xs:element name="switch_port_name" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="clusterCreateParam">
+    <xs:complexContent>
+      <xs:extension base="clusterParam">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="networkList">
+    <xs:sequence>
+      <xs:element name="network" type="namedRelatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="volumeSnapshotParam">
+    <xs:sequence>
+      <xs:element name="create_inactive" type="xs:boolean" default="false" minOccurs="0"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="type" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="autoTieringPolicyBulkRep">
+    <xs:complexContent>
+      <xs:extension base="bulkRestRep">
+        <xs:sequence>
+          <xs:element ref="auto_tiering_policy" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="autoTieringPolicyRestRep">
+    <xs:complexContent>
+      <xs:extension base="discoveredDataObjectRestRep">
+        <xs:sequence>
+          <xs:element name="policy_enabled" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="policy_name" type="xs:string" minOccurs="0"/>
+          <xs:element name="provisioning_type" type="xs:string" minOccurs="0"/>
+          <xs:element name="storage_system" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="storagegroup_name" type="xs:string" minOccurs="0"/>
+          <xs:element name="storage_pools" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="system_type" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="smisProviderList">
+    <xs:sequence>
+      <xs:element name="smis_provider" type="namedRelatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="vcenterDataCenterBulkRep">
+    <xs:complexContent>
+      <xs:extension base="bulkRestRep">
+        <xs:sequence>
+          <xs:element ref="vcenter_data_center" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="vcenterDataCenterRestRep">
+    <xs:complexContent>
+      <xs:extension base="tenantResourceRestRep">
+        <xs:sequence>
+          <xs:element name="vcenter" type="relatedResourceRep" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="hostCreateParam">
+    <xs:complexContent>
+      <xs:extension base="hostParam">
+        <xs:sequence>
+          <xs:element name="host_name" type="xs:string"/>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="type" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="projectList">
+    <xs:sequence>
+      <xs:element name="project" type="namedRelatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="vcenterUpdateParam">
+    <xs:complexContent>
+      <xs:extension base="vcenterParam">
+        <xs:sequence>
+          <xs:element name="ip_address" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="vcenterDataCenterCreate">
+    <xs:complexContent>
+      <xs:extension base="vcenterDataCenterParam">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="vcenterDataCenterParam">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="namedVolumesList">
+    <xs:sequence>
+      <xs:element name="volume" type="namedRelatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="fileSystemDeleteParam">
+    <xs:sequence>
+      <xs:element name="forceDelete" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="truststoreSettingsChanges">
+    <xs:sequence>
+      <xs:element name="accept_all_certificates" type="xs:boolean" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tagAssignment">
+    <xs:sequence>
+      <xs:element name="add" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="remove" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="initiatorBulkRep">
+    <xs:complexContent>
+      <xs:extension base="bulkRestRep">
+        <xs:sequence>
+          <xs:element name="initiators" type="initiatorRestRep" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="blockVirtualPoolUpdateParam">
+    <xs:complexContent>
+      <xs:extension base="virtualPoolUpdateParam">
+        <xs:sequence>
+          <xs:element name="auto_tiering_policy_name" type="xs:string" nillable="true" minOccurs="0"/>
+          <xs:element name="drive_type" type="xs:string" minOccurs="0"/>
+          <xs:element name="expandable" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="fast_expansion" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="high_availability" type="virtualPoolHighAvailabilityParam" minOccurs="0"/>
+          <xs:element name="max_paths" type="xs:int" minOccurs="0"/>
+          <xs:element name="min_paths" type="xs:int" minOccurs="0"/>
+          <xs:element name="multi_volume_consistency" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="num_paths" type="xs:int" minOccurs="0"/>
+          <xs:element name="paths_per_initiator" type="xs:int" minOccurs="0"/>
+          <xs:element name="protection" type="blockVirtualPoolProtectionUpdateParam" minOccurs="0"/>
+          <xs:element name="raid_level_changes" type="raidLevelChanges" minOccurs="0"/>
+          <xs:element name="thin_volume_preallocation_percentage" type="xs:int" minOccurs="0"/>
+          <xs:element name="unique_auto_tier_policy_names" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="blockVirtualPoolProtectionUpdateParam">
+    <xs:complexContent>
+      <xs:extension base="virtualPoolProtectionParam">
+        <xs:sequence>
+          <xs:element name="continuous_copies" type="virtualPoolProtectionMirrorParam" minOccurs="0"/>
+          <xs:element name="recoverpoint" type="virtualPoolProtectionRPChanges" minOccurs="0"/>
+          <xs:element name="remote_copies" type="virtualPoolRemoteProtectionUpdateParam" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="virtualPoolProtectionRPChanges">
+    <xs:sequence>
+      <xs:element name="add_copies" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="protection_varray_vpool" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="remove_copies" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="protection_varray_vpool" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="source_policy" type="protectionSourcePolicy" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="virtualPoolRemoteProtectionUpdateParam">
+    <xs:sequence>
+      <xs:element name="add_remote_copies_settings" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="add_remote_copy_setting" type="virtualPoolRemoteProtectionVirtualArraySettingsParam" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="remove_remote_copies_settings" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="remove_remote_copy_setting" type="virtualPoolRemoteProtectionVirtualArraySettingsParam" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="raidLevelChanges">
+    <xs:sequence>
+      <xs:element name="add" type="raidLevelAssignments" minOccurs="0"/>
+      <xs:element name="remove" type="raidLevelAssignments" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="raidLevelAssignments">
+    <xs:sequence>
+      <xs:element name="raid_levels" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="unManagedVolumeRestRep">
+    <xs:complexContent>
+      <xs:extension base="dataObjectRestRep">
+        <xs:sequence>
+          <xs:element name="native_guid" type="xs:string" minOccurs="0"/>
+          <xs:element name="storage_pool" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="storage_system" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="unmanaged_volumes_characterstics" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="unmanaged_volume_characterstic" type="stringHashMapEntry" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="unmanaged_volumes_info" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="unmanaged_volume_info" type="entry" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="aclAssignments">
+    <xs:sequence>
+      <xs:element name="acl_assignment" type="aclEntry" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="storageSystemList">
+    <xs:sequence>
+      <xs:element name="storage_system" type="namedRelatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="attributeList">
+    <xs:sequence>
+      <xs:element name="attribute" type="virtualPoolAvailableAttributesResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="virtualPoolAvailableAttributesResourceRep">
+    <xs:sequence>
+      <xs:element name="values" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="value" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="blockMirrorRestRep">
+    <xs:complexContent>
+      <xs:extension base="volumeRestRep">
+        <xs:sequence>
+          <xs:element name="source" type="namedRelatedResourceRep" minOccurs="0"/>
+          <xs:element name="syncState" type="xs:string" minOccurs="0"/>
+          <xs:element name="syncType" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="trustedCertificateChanges">
+    <xs:sequence>
+      <xs:element name="add" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="certificate" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="remove" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="certificate" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="virtualArrayConnectivityList">
+    <xs:sequence>
+      <xs:element ref="varray_connectivity" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="virtualArrayConnectivityRestRep">
+    <xs:sequence>
+      <xs:element name="connection_type" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="varray" type="namedRelatedResourceRep" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="smisProviderUpdateParam">
+    <xs:sequence>
+      <xs:element name="ip_address" type="xs:string" minOccurs="0"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="password" type="xs:string" minOccurs="0"/>
+      <xs:element name="port_number" type="xs:int" minOccurs="0"/>
+      <xs:element name="use_ssl" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="user_name" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="rotateKeyAndCertParam">
+    <xs:sequence>
+      <xs:element name="key_and_certificate" type="keyAndCertificateChain" minOccurs="0"/>
+      <xs:element name="system_selfsigned" type="xs:boolean" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="itlRestRepList">
+    <xs:sequence>
+      <xs:element ref="itl" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="volumeCreate">
+    <xs:sequence>
+      <xs:element name="consistency_group" type="xs:string" minOccurs="0"/>
+      <xs:element name="count" type="xs:int" minOccurs="0"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="project" type="xs:string"/>
+      <xs:element name="size" type="xs:string"/>
+      <xs:element name="varray" type="xs:string"/>
+      <xs:element name="vpool" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="smisProviderCreateParam">
+    <xs:sequence>
+      <xs:element name="ip_address" type="xs:string"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="password" type="xs:string"/>
+      <xs:element name="port_number" type="xs:int"/>
+      <xs:element name="use_ssl" type="xs:boolean"/>
+      <xs:element name="user_name" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="storageSystemRestRep">
+    <xs:complexContent>
+      <xs:extension base="discoveredSystemObjectRestRep">
+        <xs:sequence>
+          <xs:element name="active_provider_uri" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="assocociated_systems" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="associated_system" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="export_masks" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="export_mask" type="stringHashMapEntry" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="firmware_version" type="xs:string" minOccurs="0"/>
+          <xs:element name="srdf_active_ra_groups_exist" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="ip_address" type="xs:string" minOccurs="0"/>
+          <xs:element name="major_version" type="xs:string" minOccurs="0"/>
+          <xs:element name="max_resources" type="xs:int" minOccurs="0"/>
+          <xs:element name="minor_version" type="xs:string" minOccurs="0"/>
+          <xs:element name="model" type="xs:string" minOccurs="0"/>
+          <xs:element name="num_resources" type="xs:int" minOccurs="0"/>
+          <xs:element name="port_number" type="xs:int" minOccurs="0"/>
+          <xs:element name="protocols" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="protocol" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="smis_providers" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="smis_provider" type="relatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="reachable" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="connected_systems" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="connected_system" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="secondary_ips" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="secondary_ip" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="serial_number" type="xs:string" minOccurs="0"/>
+          <xs:element name="smis_connection_status" type="xs:string" minOccurs="0"/>
+          <xs:element name="smis_port_number" type="xs:int" minOccurs="0"/>
+          <xs:element name="smis_provider_ip" type="xs:string" minOccurs="0"/>
+          <xs:element name="smis_use_ssl" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="smis_user_name" type="xs:string" minOccurs="0"/>
+          <xs:element name="async_actions" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="async_action" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="supported_provisioning_type" type="xs:string" minOccurs="0"/>
+          <xs:element name="supported_replication_types" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="supported_replication_type" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="user_name" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="snapshotList">
+    <xs:sequence>
+      <xs:element name="snapshot" type="namedRelatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="exportCreateParam">
+    <xs:sequence>
+      <xs:element name="clusters" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="cluster" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="hosts" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="host" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="initiators" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="initiator" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="project" type="xs:string"/>
+      <xs:element name="type" type="xs:string"/>
+      <xs:element name="varray" type="xs:string"/>
+      <xs:element name="volumes" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="volume" type="volumeParam" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="virtualArrayCreateParam">
+    <xs:complexContent>
+      <xs:extension base="virtualArrayParam">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="initiatorUpdateParam">
+    <xs:complexContent>
+      <xs:extension base="baseInitiatorParam">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="virtualDataCenterRestRep">
+    <xs:complexContent>
+      <xs:extension base="dataObjectRestRep">
+        <xs:sequence>
+          <xs:element name="apiEndpoint" type="xs:string" minOccurs="0"/>
+          <xs:element name="connectionStatus" type="xs:string" minOccurs="0"/>
+          <xs:element name="description" type="xs:string" minOccurs="0"/>
+          <xs:element name="geoCommandEndpoint" type="xs:string" minOccurs="0"/>
+          <xs:element name="geoDataEndpoint" type="xs:string" minOccurs="0"/>
+          <xs:element name="lastSeenTimeInMillis" type="xs:long" minOccurs="0"/>
+          <xs:element name="local" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="shortId" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="storageSystemBulkRep">
+    <xs:complexContent>
+      <xs:extension base="bulkRestRep">
+        <xs:sequence>
+          <xs:element ref="storage_system" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="virtualDataCenterSecretKeyRestRep">
+    <xs:sequence>
+      <xs:element name="secret_key" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="projectParam">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="storageSystemSMISCreateParam">
+    <xs:complexContent>
+      <xs:extension base="storageSystemSMISRequestParam">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="vcenterDataCenterUpdate">
+    <xs:complexContent>
+      <xs:extension base="vcenterDataCenterParam">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="blockConsistencyGroupBulkRep">
+    <xs:complexContent>
+      <xs:extension base="bulkRestRep">
+        <xs:sequence>
+          <xs:element ref="consistency_group" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="hostBulkRep">
+    <xs:complexContent>
+      <xs:extension base="bulkRestRep">
+        <xs:sequence>
+          <xs:element ref="host" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="protectionSetRestRep">
+    <xs:complexContent>
+      <xs:extension base="dataObjectRestRep">
+        <xs:sequence>
+          <xs:element name="project" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="protection_id" type="xs:string" minOccurs="0"/>
+          <xs:element name="protection_status" type="xs:string" minOccurs="0"/>
+          <xs:element name="protection_system" type="relatedResourceRep" minOccurs="0"/>
+          <xs:element name="volumes" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="volume" type="relatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="resourceList">
+    <xs:sequence>
+      <xs:element name="project_resource" type="typedRelatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="typedRelatedResourceRep">
+    <xs:complexContent>
+      <xs:extension base="namedRelatedResourceRep">
+        <xs:sequence>
+          <xs:element name="resource_type" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="unManagedBulkRep">
+    <xs:complexContent>
+      <xs:extension base="bulkRestRep">
+        <xs:sequence>
+          <xs:element ref="unmanaged_volume" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="storagePoolResources">
+    <xs:sequence>
+      <xs:element name="storage_resource" type="typedRelatedResourceRep" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="capacityResourceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="VOLUME"/>
+      <xs:enumeration value="FILESHARE"/>
+      <xs:enumeration value="POOL"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
+
