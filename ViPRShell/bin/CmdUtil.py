@@ -1,3 +1,10 @@
+"""
+Copyright 2015 EMC Corporation
+All Rights Reserved
+EMC Confidential: Restricted Internal Distribution
+81ff427ffd0a66013a8e07b7b967d6d6b5f06b1b.ViPR
+"""
+
 from cmd import Cmd
 import ViPRConnection
 import os

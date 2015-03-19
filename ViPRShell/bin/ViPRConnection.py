@@ -1,3 +1,10 @@
+"""
+Copyright 2015 EMC Corporation
+All Rights Reserved
+EMC Confidential: Restricted Internal Distribution
+81ff427ffd0a66013a8e07b7b967d6d6b5f06b1b.ViPR
+"""
+
 import json
 import requests
 requests.packages.urllib3.disable_warnings()
