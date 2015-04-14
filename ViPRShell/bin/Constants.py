@@ -13,3 +13,4 @@ RESPONSE_TYPE_JSON = 'json'
 PARAMS_KEY = 'params'
 ACTIONS_KEY = 'actions'
 COOKIE_FILE_NAME = 'cf'
+PICKLE_FILE_NAME = "{0}-context.pickle"

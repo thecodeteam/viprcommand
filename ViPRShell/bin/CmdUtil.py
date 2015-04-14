@@ -179,7 +179,7 @@ class MyCmd(Cmd):
                     curr_path += '/' + args
                 else:
                     print('Wrong path')
-            self.prompt = 'ViPRcli:' + curr_path + '/>'
+            self.prompt = 'ViPRShell:' + curr_path + '/>'
         return
 
     def do_GET(self, args):
@@ -531,7 +531,9 @@ class MyCmd(Cmd):
                         key_arr = key.split(':')
 
                         for k in key_arr[:-1]:
-                            sub = ET.SubElement(curr_element, k)
+                            sub = curr_element.find(k)
+                            if not sub:
+                                sub = ET.SubElement(curr_element, k)
                             curr_element = sub
                         child_element_tag = key_arr[-1]
                     else:
@@ -546,7 +548,7 @@ class MyCmd(Cmd):
                         curr_element = ET.SubElement(curr_element, child_element_tag)
                         curr_element.text = val
 
-                payload = ET.tostring(root, encoding='utf8')
+                payload = ET.tostring(root) #encoding='utf8'
         return payload, '?' + query_str[:-1] if query_str else '', content_type
 
     def __process_arg_val(self, arg_key, arg_val):
