@@ -57,6 +57,10 @@ try:
     pickle_file_name = Constants.PICKLE_FILE_NAME.format(vipr_version)
     # Check if this pickle version is available
     if not os.path.isfile(pickle_file_name):
+        # Create directory if it doesn't exist
+        if not os.path.exists('../descriptors'):
+            os.makedirs('../descriptors')
+
         # GET WADLs and XSDs
         response = ViPRConnection.submitHttpRequest('GET', WADL_URI, cookie, xml=True)
         with open('../descriptors/application.xml', 'w+') as f:
