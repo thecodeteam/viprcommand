@@ -69,9 +69,13 @@ try:
         with open('../descriptors/syssvc-application.xml', 'w+') as f:
             f.write(response.text)
         response = ViPRConnection.submitHttpRequest('GET', XSD_URI, cookie, xml=True)
+        if not response:
+            raise Exception('XSD not found')
         with open('../descriptors/xsd0.xsd', 'w+') as f:
             f.write(response.text)
         response = ViPRConnection.submitHttpRequest('GET', SYSSVC_XSD_URI, cookie, xml=True)
+        if not response:
+            raise Exception('System service XSD not found')
         with open('../descriptors/syssvc-xsd0.xsd', 'w+') as f:
             f.write(response.text)
 
