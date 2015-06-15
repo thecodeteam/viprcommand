@@ -12,7 +12,6 @@ import os
 
 VIPR_HOST = None
 VIPR_PORT = 4443
-#PICKLE_FILE_NAME = None
 COOKIE_DIR_ABS_PATH = None
 
 def load_config():
@@ -23,7 +22,6 @@ def load_config():
         parser.read(config_file)
         VIPR_HOST = parser['vipr']['HOST']
         VIPR_PORT = parser['vipr']['PORT']
-        #PICKLE_FILE_NAME = parser['input']['PICKLE_FILE']
         COOKIE_DIR_ABS_PATH = parser['general']['COOKIE_DIR_ABS_PATH']
 
         if not COOKIE_DIR_ABS_PATH:
