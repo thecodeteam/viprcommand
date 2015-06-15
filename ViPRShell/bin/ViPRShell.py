@@ -33,11 +33,15 @@ def login(user, pswd):
     return cookie
 
 try:
+
     ConfigUtil.load_config()
 
     # Get username, password from arguments or prompt user
     if sys.argv and len(sys.argv) > 1:
         if sys.argv[1] == "help" or len(sys.argv) != 5:
+            print()
+            print("Ensure that the host name/ip in the config/cli_config.ini file is updated before running the ViPRShell command")
+            print()
             print("python ViPRShell -u name -p password")
             sys.exit()
         user = sys.argv[2]
@@ -60,6 +64,8 @@ try:
         # Create directory if it doesn't exist
         if not os.path.exists('../descriptors'):
             os.makedirs('../descriptors')
+        if not os.path.exists('../pickles'):
+            os.makedirs('../pickles')
 
         # GET WADLs and XSDs
         response = ViPRConnection.submitHttpRequest('GET', WADL_URI, cookie, xml=True)
