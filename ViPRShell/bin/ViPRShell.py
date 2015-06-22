@@ -33,15 +33,11 @@ def login(user, pswd):
     return cookie
 
 try:
-
     ConfigUtil.load_config()
 
     # Get username, password from arguments or prompt user
     if sys.argv and len(sys.argv) > 1:
         if sys.argv[1] == "help" or len(sys.argv) != 5:
-            print()
-            print("Ensure that the host name/ip in the config/cli_config.ini file is updated before running the ViPRShell command")
-            print()
             print("python ViPRShell -u name -p password")
             sys.exit()
         user = sys.argv[2]
@@ -62,27 +58,27 @@ try:
     # Check if this pickle version is available
     if not os.path.isfile(pickle_file_name):
         # Create directory if it doesn't exist
-        if not os.path.exists('../descriptors'):
-            os.makedirs('../descriptors')
-        if not os.path.exists('../pickles'):
-            os.makedirs('../pickles')
+        if not os.path.exists(CommonUtil.get_file_dir_location('descriptors')):
+            os.makedirs(CommonUtil.get_file_dir_location('descriptors'))
+        if not os.path.exists(CommonUtil.get_file_dir_location('pickles')):
+            os.makedirs(CommonUtil.get_file_dir_location('pickles'))
 
         # GET WADLs and XSDs
         response = ViPRConnection.submitHttpRequest('GET', WADL_URI, cookie, xml=True)
-        with open('../descriptors/application.xml', 'w+') as f:
+        with open(CommonUtil.get_file_location('descriptors', 'application.xml'), 'w+') as f:
             f.write(response.text)
         response = ViPRConnection.submitHttpRequest('GET', SYSSVC_WADL_URI, cookie, xml=True)
-        with open('../descriptors/syssvc-application.xml', 'w+') as f:
+        with open(CommonUtil.get_file_location('descriptors', 'syssvc-application.xml'), 'w+') as f:
             f.write(response.text)
         response = ViPRConnection.submitHttpRequest('GET', XSD_URI, cookie, xml=True)
         if not response:
             raise Exception('XSD not found')
-        with open('../descriptors/xsd0.xsd', 'w+') as f:
+        with open(CommonUtil.get_file_location('descriptors', 'xsd0.xsd'), 'w+') as f:
             f.write(response.text)
         response = ViPRConnection.submitHttpRequest('GET', SYSSVC_XSD_URI, cookie, xml=True)
         if not response:
             raise Exception('System service XSD not found')
-        with open('../descriptors/syssvc-xsd0.xsd', 'w+') as f:
+        with open(CommonUtil.get_file_location('descriptors', 'syssvc-xsd0.xsd'), 'w+') as f:
             f.write(response.text)
 
         CreateInputs.create_inputs(pickle_file_name)
@@ -95,6 +91,4 @@ try:
     prompt.cmdloop('Starting ViPR Shell...')
 
 except Exception as e:
-    print(e)
-    #import traceback
-    #traceback.print_exc()
+    print("Exception in bin.ViPRShell" + str(e))

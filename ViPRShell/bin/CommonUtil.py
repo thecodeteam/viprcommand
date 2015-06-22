@@ -176,11 +176,17 @@ def __prepare_attributes_xml(xsd_element, help_xml):
                 __prepare_attributes_xml(c, new_xml)
 
     return
-
-def get_file_location(file_dir, filename):
+def get_parent_dir_location():
     src_dir = os.path.dirname( __file__ )
     parent_dir = os.path.split(src_dir)[0]
-    return os.path.join(parent_dir, file_dir, filename)
+    return parent_dir
+
+def get_file_dir_location(file_dir):
+    return os.path.join(get_parent_dir_location(), file_dir)
+
+def get_file_location(file_dir, filename):
+    return os.path.join(get_file_dir_location(file_dir), filename)
+
 
 def find_paths(found_paths, curr_context, find_me, full_key=''):
     for first_key, first_value in curr_context.items():

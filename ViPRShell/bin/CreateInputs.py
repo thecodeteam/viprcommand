@@ -6,12 +6,11 @@ EMC Confidential: Restricted Internal Distribution
 """
 
 import xml.etree.ElementTree as ET
-from collections import OrderedDict
 import XSDParser
 import pickle
 from CLIInputs import CLIInputs
 from CLIInputs import ActionParams
-import Constants
+import CommonUtil
 
 cli_inputs = CLIInputs()
 ACTIONS_KEY = 'actions'
@@ -128,7 +127,6 @@ def post_process_context():
         action = path_arr[-1]
         temp_context.pop(action)
         actions_dict[action] = val
-    #print(modify_values)
 
 def look_for_post_actions(modify_values, curr_context, full_key):
     for first_key, first_value in curr_context.items():
@@ -146,24 +144,16 @@ def look_for_post_actions(modify_values, curr_context, full_key):
 
 def create_inputs(pickle_file_name):
     try:
-        parse_wadl('../descriptors/application.xml')
-        parse_wadl('../descriptors/syssvc-application.xml')
+        parse_wadl(CommonUtil.get_file_location('descriptors', 'application.xml'))
+        parse_wadl(CommonUtil.get_file_location('descriptors', 'syssvc-application.xml'))
 
         post_process_context()
-        #print(cli_inputs.wadl_context)
+        XSDParser.parse_xsd(CommonUtil.get_file_location('descriptors', 'xsd0.xsd'), cli_inputs)
+        XSDParser.parse_xsd(CommonUtil.get_file_location('descriptors', 'syssvc-xsd0.xsd'), cli_inputs)
 
-        XSDParser.parse_xsd('../descriptors/xsd0.xsd', cli_inputs)
-        XSDParser.parse_xsd('../descriptors/syssvc-xsd0.xsd', cli_inputs)
-
-        with open('../pickles/'+pickle_file_name, 'wb') as f:
+        with open(CommonUtil.get_file_location('pickles', pickle_file_name), 'wb') as f:
             pickle.dump(cli_inputs, f)
-
-
     except Exception as e:
         print(e)
         import traceback
         traceback.print_exc()
-
-#ordered_context = OrderedDict(sorted(context.items(), key=lambda t: t[0]))
-#print(ordered_context)
-

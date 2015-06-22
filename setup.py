@@ -30,5 +30,5 @@ setup(
 
     ],
     license='EMC Corp',
-    description='ViPR Shell'
+    description='ViPR Shell',
 )

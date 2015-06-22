@@ -89,3 +89,4 @@ def submitHttpRequest(httpMethod, uri, token, contentType='application/json', pa
                 error_details = response.reason
 
         raise Exception("%s: %s" % (str(response.status_code), error_details))
+
