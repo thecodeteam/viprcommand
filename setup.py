@@ -26,9 +26,9 @@ setup(
         'Topic :: Software Development :: Libraries :: Application Frameworks',
 
         # Pick your license as you wish (should match "license" above)
-        'License :: Other/Proprietary License',
+        'License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)',
 
     ],
-    license='EMC Corp',
+    license='MPL 2.0 ',
     description='ViPR Shell',
 )
