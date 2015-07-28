@@ -2,8 +2,8 @@
 from setuptools import setup
 
 setup(
-    name='vse-viprshell',
-    version='1.0',
+    name='viprshell',
+    version='15.7',
     packages=['ViPRShell',
               'ViPRShell.bin',
               'ViPRShell.config'],
