@@ -42,6 +42,7 @@ class MyCmd(Cmd):
 
     def do_quit(self, args):
         """Quits the program."""
+        self.do_logout(args)
         print("Quitting.")
         raise SystemExit
 
@@ -286,6 +287,7 @@ class MyCmd(Cmd):
         try:
             cookie = self.__get_cookie()
             if cookie:
+                print("Logging out")
                 ViPRConnection.logout(cookie)
                 os.remove(os.path.join(ConfigUtil.COOKIE_DIR_ABS_PATH, COOKIE_FILE_NAME))
         except Exception as e:
@@ -305,13 +307,11 @@ class MyCmd(Cmd):
 
 
     def completedefault(self, text, line, begidx, endidx):
-        if not text:
-            completions = self.curr_context.keys()
-        elif text == '/':
-            completions = self._context.keys()
+        if not text or text == '/':
+            completions = list(self._context.keys())
         else:
             if text.startswith('/'):
-                completions = self.__get_completions_for_partial_path(text[1:], self._context)
+                completions = self.__get_completions_for_partial_path(text[1:], self._context, True)
             else:
                 completions = self.__get_completions_for_partial_path(text, curr_context)
 
@@ -364,7 +364,7 @@ class MyCmd(Cmd):
                         return None
         return temp_context
 
-    def __get_completions_for_partial_path(self, path, context_search):
+    def __get_completions_for_partial_path(self, path, context_search, start=False):
         path_arr = path.split('/')
         temp_context = context_search
         completions = []
@@ -378,9 +378,14 @@ class MyCmd(Cmd):
 
         last_element = path_arr[len(path_arr)-1]
         prefix = '/'.join(path_arr[:-1])
+        if prefix:
+            prefix += '/'
+        # start is TRUE for paths starting with '/', so adding it to prefix.
+        if start:
+            prefix = '/' + prefix
         for k in temp_context:
             if k.startswith(last_element):
-                completions.append(prefix+'/'+k)
+                completions.append(prefix + k)
         return completions
 
     def __get_cookie(self):
