@@ -1,3 +1,5 @@
+ViPR Shell provides command line interface for ViPR REST APIs.   
+
 #Install  
 
 1.	Copy downloaded package to any location  
