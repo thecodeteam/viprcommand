@@ -81,7 +81,7 @@ This command will exit ViPR Shell
 This command will create resource in current context. You can write xml or json to file and input that to command or provide them as parameters.  
 
 Building parameters:-  
-Parameters are flat view of XML elements. There should be 1 parameter for each required element. All child elements should be typed along with its parents. Ignore XML’s root element.  
+Parameters are flat view of XML elements. There should be 1 parameter for each required element. All child elements should be typed along with its parents. Ignore XML's root element.  
 For example:  
 XML  
 `<block_export_create>
@@ -107,7 +107,7 @@ XML
 </block_export_create>`  
 
 _Parameters:_  
-`-name {name} -project name:{project_name} -type cluster -clusters:cluster {cluster_id} –clusters_cluster {cluster_id} -volumes:volume:id {volume_id} -volumes:volume:lun {volume_lun} -varray name:{varray_name}`  
+`-name {name} -project name:{project_name} -type cluster -clusters:cluster {cluster_id} -clusters:cluster {cluster_id} -volumes:volume:id {volume_id} -volumes:volume:lun {volume_lun} -varray name:{varray_name}`  
 
 If "MIN" in table is 1, then that element is required. If "MAX" in table is "unbounded", that that element can have multiple values.  
 
@@ -176,9 +176,9 @@ Delete volume (Navigate to block volume resource /block/volumes/{id})
 1.	"help" will show input fields in table and xml format  
 2.	Before running command, run "ls" to see what actions are supported  
 3.	If a field requires URN to be passed you can either send URN or send its name and prefix it with "name".   
-For example: to send project as name “-project name:DemoProject”  
+For example: to send project as name `-project name:DemoProject`  
 4.	Fields can be repeated if they allow multiple values ("MAX" is "unbounded")  
-        For example: “-cluster name:clusetr1 –cluster name:cluster2”  
+        For example: `-cluster name:clusetr1 –cluster name:cluster2`  
 
 ##Searching for a resource  
 
