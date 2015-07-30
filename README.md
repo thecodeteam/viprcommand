@@ -1,33 +1,33 @@
-**Install** 
-----------
+#Install  
+
 1.	Copy downloaded package to any location  
 2.	Windows only: Open cmd prompt  
 3.	Navigate to ViPR shell downloaded folder  
-4.	Navigate to ‘config’ folder and enter your ViPR host in cli_config.ini.  
-5.	Navigate to ‘bin’ folder  
-6.	Type ‘python ViPRShell.py’ and press ENTER. The log in prompt appears:  
+4.	Navigate to "config" folder and enter your ViPR host in cli_config.ini.  
+5.	Navigate to "bin" folder  
+6.	Type "python ViPRShell.py" and press ENTER. The log in prompt appears:  
         login as:  
         Type ViPR username and press ENTER. A password prompt appears:  
         Password:  
         Type password and press ENTER.    
-        (Instead you could also run ‘python ViPRShell.py -username {user} -password {pswd})  
+        (Instead you could also run `python ViPRShell.py -username {user} -password {pswd}`)  
  
-**Context tree**
-----------------  
-After logging into ViPR Shell it will initially land in root context. From there using ‘cd’ command (explained below) one can navigate to different contexts and sub-contexts. There are 3 components to each context: resources, sub-context and actions.  
+#Context tree  
+  
+After logging into ViPR Shell it will initially land in root context. From there using "cd" command (explained below) one can navigate to different contexts and sub-contexts. There are 3 components to each context: resources, sub-context and actions.  
 
-_Resources_:  these are ViPR resources in current context, identified by URN. To navigate to resource, use ‘cd {resource_urn}’. 
+_Resources_:  these are ViPR resources in current context, identified by URN. To navigate to resource, use "cd {resource_urn}". 
 
-_Sub-context_: these are children to current context. For example: if you are in ‘block’ context, ‘exports’, ‘volumes’ are some of its sub-contexts. To navigate to sub-context, use ‘cd {sub_context}’.
+_Sub-context_: these are children to current context. For example: if you are in "block" context, "exports", "volumes" are some of its sub-contexts. To navigate to sub-context, use `cd {sub_context}`.
 
 _Actions_: List of actions that can be performed on current context. These are commands by themselves.  
 
 Refer to ViPR REST API guide for details on these contexts, actions, payloads etc.  
 
-**Commands**  
--------------
-**Log in/Log out from CLI**  
-_**login**_  
+#Commands  
+
+##Log in/Log out from CLI  
+###login  
 This command will log user to ViPR.  
   
 _Options_  
@@ -37,18 +37,19 @@ _Options_
 _Example_  
 `login -username root -password ChangeMe`
 
-_**logout**_
+###logout
 This command will log out user from ViPR  
 
-**Unix-like commands**  
-_**ls**_  
+##Unix-like commands  
+
+###ls  
 This command will list all resources in current context  
 
-_**ll**_  
+###ll  
 This command will list all resources in current context along with their names  
 
-_**cd**_  
-This command will change context. If new context starts with ‘/’ it is treated as absolute path.   
+###cd  
+This command will change context. If new context starts with "/" it is treated as absolute path.   
 
 _Arguments_  
 {New Context}  
@@ -57,10 +58,10 @@ _Examples_
 `cd /block/volumes`  
 `cd projects`  
 
-_**cd ../cd..**_  
+###cd ../cd..  
 This command will change context to parent (if exists).  
 
-_**find**_  
+###find  
 This command will find all matching context paths for a given resource  
 
 _Arguments_  
@@ -69,14 +70,14 @@ _Arguments_
 _Example_  
 `find tenant`  
 
-_**quit**_  
+###quit  
 This command will exit ViPR Shell  
 
 
 
-**REST operations**  
---------------------
-_**POST**_  
+##REST operations  
+
+###POST  
 This command will create resource in current context. You can write xml or json to file and input that to command or provide them as parameters.  
 
 Building parameters:-  
@@ -108,7 +109,7 @@ XML
 _Parameters:_  
 `-name {name} -project name:{project_name} -type cluster -clusters:cluster {cluster_id} –clusters_cluster {cluster_id} -volumes:volume:id {volume_id} -volumes:volume:lun {volume_lun} -varray name:{varray_name}`  
 
-If ‘MIN’ in table is 1, then that element is required. If ‘MAX’ in table is ‘unbounded’, that that element can have multiple values.  
+If "MIN" in table is 1, then that element is required. If "MAX" in table is "unbounded", that that element can have multiple values.  
 
 _Arguments_  
 help  
@@ -124,7 +125,7 @@ Using paramters: create volume example
 `POST -name kbvol -project name:kb -size 1GB -varray name:KB_test_varray -vpool name:KB_json_update`  
 
 
-_**PUT**_  
+###PUT  
 This command will update current resource. This works same as POST.  
 _Arguments_  
 help  
@@ -136,8 +137,8 @@ _Examples_
 PUT json payload.json
 PUT xml payload.xml`  
 
-_**GET**_  
-This command will return current resource details. By default this command will return data in table format. To format output as xml or json use ‘accept’ option.  
+###GET  
+This command will return current resource details. By default this command will return data in table format. To format output as xml or json use "accept" option.  
 
 _Arguments_  
 help 
@@ -150,8 +151,8 @@ _Examples_
 GET -accept json`  
 
 
-_**Others**_  
-All ‘Actions’ can be run as commands. Run ‘help’ on them and check if they require any parameters.  
+###Others  
+All "Actions" can be run as commands. Run "help" on them and check if they require any parameters.  
 
 `ViPRShell:/block/volumes/urn:storageos:Volume:00088e2e-7510-4be7-9a30-75d1bcdc29ab:vdc1/> expand help`  
 Payload Fields:-  
@@ -171,28 +172,27 @@ Expand block volume (Navigate to block volume resource /block/volumes/{id})
 Delete volume (Navigate to block volume resource /block/volumes/{id})  
 `deactivate`  
 
-_**General rules**_  
-1.	‘help’ will show input fields in table and xml format  
-2.	Before running command, run ‘ls’ to see what actions are supported  
-3.	If a field requires URN to be passed you can either send URN or send its name and prefix it with ‘name’.   
+###General rules  
+1.	"help" will show input fields in table and xml format  
+2.	Before running command, run "ls" to see what actions are supported  
+3.	If a field requires URN to be passed you can either send URN or send its name and prefix it with "name".   
 For example: to send project as name “-project name:DemoProject”  
-4.	Fields can be repeated if they allow multiple values (‘MAX’ is ‘unbounded’)  
+4.	Fields can be repeated if they allow multiple values ("MAX" is "unbounded")  
         For example: “-cluster name:clusetr1 –cluster name:cluster2”  
 
-**Searching for a resource**  
------------------------------
-Search can be performed on resources if it is listed as ‘sub-context’.   
+##Searching for a resource  
+
+Search can be performed on resources if it is listed as "sub-context".   
 For example: to search for a volume by name  
 `cd /block/volumes/search  
 GET -name vol1`  
 
-**Deleting a resource**  
-------------------------
-Resource can be deleted if ‘deactivate’ is found in ‘actions’  
+##Deleting a resource  
+
+Resource can be deleted if "deactivate" is found in "actions"  
 
 For example: to delete a block volume  
 `cd /block/volumes
 deactivate -id {volume_id}`
-
 
 
