@@ -1,5 +1,9 @@
 ViPR Shell provides command line interface for ViPR REST APIs.   
 
+#Supported Versions  
+ViPR: 2.2, 2.3  
+Python: 3.2.5, 3.4  
+
 #Install  
 
 1.	Copy downloaded package to any location  
@@ -196,5 +200,4 @@ Resource can be deleted if "deactivate" is found in "actions"
 For example: to delete a block volume  
 `cd /block/volumes
 deactivate -id {volume_id}`
-
 
