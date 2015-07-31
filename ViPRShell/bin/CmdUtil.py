@@ -425,7 +425,9 @@ class MyCmd(Cmd):
                         # this is only for tasks response
                         ids.append(item['op_id'])
                     else:
-                        print('unknown item found')
+                        # This happens for san-fabrics API
+                        ids.append(item)
+                        #print('unknown item found')
                 break
             if ids:
                 print('\n'.join(ids))
@@ -442,7 +444,9 @@ class MyCmd(Cmd):
                         # this is only for tasks response
                         table.append((item['op_id'], item['name']))
                     else:
-                        print('unknown item found')
+                        # This happens for san-fabrics API
+                        table.append((item, ''))
+                        #print('unknown item found')
                 break
             CommonUtil.print_table(table)
             print(' ')
