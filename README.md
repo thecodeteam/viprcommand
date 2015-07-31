@@ -123,9 +123,9 @@ json
 xml  
 
 _Examples_  
-`POST help  
-POST json payload.json   
-POST xml payload.xml`  
+`POST help`
+`POST json payload.json`
+`POST xml payload.xml`
 
 Using paramters: create volume example  
 `POST -name kbvol -project name:kb -size 1GB -varray name:KB_test_varray -vpool name:KB_json_update`  
@@ -139,9 +139,9 @@ json
 xml  
 
 _Examples_  
-`PUT help  
-PUT json payload.json  
-PUT xml payload.xml`  
+`PUT help`
+`PUT json payload.json`
+`PUT xml payload.xml`
 
 ###GET  
 This command will return current resource details. By default this command will return data in table format. To format output as xml or json use "accept" option.  
@@ -153,8 +153,8 @@ _Options_
 `-accept {xml/json}`  
 
 _Examples_  
-`GET -accept xml  
-GET -accept json`  
+`GET -accept xml`
+`GET -accept json`
 
 
 ###Others  
@@ -184,19 +184,19 @@ Delete volume (Navigate to block volume resource /block/volumes/{id})
 3.	If a field requires URN to be passed you can either send URN or send its name and prefix it with "name".   
 For example: to send project as name `-project name:DemoProject`  
 4.	Fields can be repeated if they allow multiple values ("MAX" is "unbounded")  
-        For example: `-cluster name:clusetr1 –cluster name:cluster2`  
+        For example: `-cluster name:clusetr1 ï¿½cluster name:cluster2`  
 
 ##Searching for a resource  
 
 Search can be performed on resources if it is listed as "sub-context".   
 For example: to search for a volume by name  
-`cd /block/volumes/search  
-GET -name vol1`  
+`cd /block/volumes/search`
+`GET -name vol1`
 
 ##Deleting a resource  
 
 Resource can be deleted if "deactivate" is found in "actions"  
 
 For example: to delete a block volume  
-`cd /block/volumes  
-deactivate -id {volume_id}`
+`cd /block/volumes`
+`deactivate -id {volume_id}`
