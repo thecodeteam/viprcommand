@@ -44,9 +44,9 @@ _Options_
 -password  
 
 _Example_  
-```
-login -username root -password ChangeMe
-```
+
+    login -username root -password ChangeMe
+
 
 ### logout
 This command will log out user from ViPR  
@@ -63,13 +63,13 @@ This command will list all resources in current context along with their names
 This command will change context. If new context starts with "/" it is treated as absolute path.   
 
 _Arguments_  
-{New Context}  
+{New_context}  
 
 _Examples_  
-```
-cd /block/volumes
-cd projects
-```
+
+    cd /block/volumes
+    cd projects
+
 
 ###cd ../cd..  
 This command will change context to parent (if exists).  
@@ -81,9 +81,9 @@ _Arguments_
 {Resource_name}  
 
 _Example_  
-```
-find tenant
-```
+
+    find tenant
+
 
 ### quit  
 This command will exit ViPR Shell  
@@ -97,34 +97,34 @@ Building parameters:-
 Parameters are flat view of XML elements. There should be 1 parameter for each required element. All child elements should be typed along with its parents. Ignore XML's root element.  
 For example:  
 XML  
-```
-<block_export_create>
-	<clusters>
-		<cluster/>
-	</clusters>
-	<hosts>
-		<host/>
-	</hosts>
-	<initiators>
-		<initiator/>
-	</initiators>
-	<name/>
-	<project/>
-	<type/>
-	<varray/>
-	<volumes>
-		<volume>
-			<id/>
-			<lun/>
-		</volume>
-	</volumes>
-</block_export_create>
-```
+
+    <block_export_create>
+    	<clusters>
+    		<cluster/>
+    	</clusters>
+    	<hosts>
+    		<host/>
+    	</hosts>
+    	<initiators>
+    		<initiator/>
+    	</initiators>
+    	<name/>
+    	<project/>
+    	<type/>
+    	<varray/>
+    	<volumes>
+    		<volume>
+    			<id/>
+    			<lun/>
+    		</volume>
+    	</volumes>
+    </block_export_create>
+
 
 _Parameters:_  
-```
--name {name} -project name:{project_name} -type cluster -clusters:cluster {cluster_id} -clusters:cluster {cluster_id} -volumes:volume:id {volume_id} -volumes:volume:lun {volume_lun} -varray name:{varray_name}  
-```
+
+    -name {name} -project name:{project_name} -type cluster -clusters:cluster {cluster_id} -clusters:cluster {cluster_id} -volumes:volume:id {volume_id} -volumes:volume:lun {volume_lun} -varray name:{varray_name}  
+
 
 If "MIN" in table is 1, then that element is required. If "MAX" in table is "unbounded", that that element can have multiple values.  
 
@@ -134,16 +134,16 @@ json
 xml  
 
 _Examples_  
-```
-POST help  
-POST json payload.json  
-POST xml payload.xml  
-```
+
+    POST help  
+    POST json payload.json  
+    POST xml payload.xml  
+
 
 Using paramters: create volume example  
-```
-POST -name kbvol -project name:kb -size 1GB -varray name:KB_test_varray -vpool name:KB_json_update
-```
+
+    POST -name kbvol -project name:kb -size 1GB -varray name:KB_test_varray -vpool name:KB_json_update
+
 
 ### PUT  
 This command will update current resource. This works same as POST.  
@@ -153,11 +153,11 @@ json
 xml  
 
 _Examples_  
-```
-PUT help  
-PUT json payload.json  
-PUT xml payload.xml   
-```  
+
+    PUT help  
+    PUT json payload.json  
+    PUT xml payload.xml   
+  
 
 ### GET  
 This command will return current resource details. By default this command will return data in table format. To format output as xml or json use "accept" option.  
@@ -166,41 +166,40 @@ _Arguments_
 help 
 
 _Options_  
-`-accept {xml/json}`  
+
+    -accept {xml/json}  
 
 _Examples_  
-```
-GET -accept xml
-GET -accept json
-```
+
+    GET -accept xml
+    GET -accept json
 
 
 ### Others  
 All "Actions" can be run as commands. Run "help" on them and check if they require any parameters.  
 
-```
-ViPRShell:/block/volumes/urn:storageos:Volume:00088e2e-7510-4be7-9a30-75d1bcdc29ab:vdc1/> expand help  
-Payload Fields:-  
-| NAME     | TYPE      | MIN | MAX |  
-| new_size | xs:string | 1   | 1   |  
+    ViPRShell:/block/volumes/urn:storageos:Volume:00088e2e-7510-4be7-9a30-75d1bcdc29ab:vdc1/> expand help  
+    Payload Fields:-  
+    | NAME     | TYPE      | MIN | MAX |  
+    | new_size | xs:string | 1   | 1   |  
+    
+    XML Payload:-  
+    <?xml version="1.0" ?>  
+    <volume_expand>  
+            <new_size/>  
+    </volume_expand>
 
-XML Payload:-  
-<?xml version="1.0" ?>  
-<volume_expand>  
-        <new_size/>  
-</volume_expand>
-```
 
 _Examples_  
 Expand block volume (Navigate to block volume resource /block/volumes/{id})  
-```
-expand -new_size 10
-```  
+
+    expand -new_size 10
+ 
 
 Delete volume (Navigate to block volume resource /block/volumes/{id})  
-```
-deactivate
-```  
+
+    deactivate
+  
 
 ### General rules  
 1.	"help" will show input fields in table and xml format  
@@ -214,48 +213,45 @@ For example: to send project as name `-project name:DemoProject`
 
 Search can be performed on resources if it is listed as "sub-context".   
 For example: to search for a volume by name  
-```
-cd /block/volumes/search
-GET -name vol1
-```
 
+    cd /block/volumes/search
+    GET -name vol1
+    
 ## Deleting a resource  
 
 Resource can be deleted if "deactivate" is found in "actions"  
 
 For example: to delete a block volume  
-```
-cd /block/volumes
-deactivate -id {volume_id}
-```
+
+    cd /block/volumes
+    deactivate -id {volume_id}
 
 ## Using Query Parameters
 
 Query parameters can be sent in command just like other parameters. To get list of query parameters on a command type "help".
 
 For example: to get a zone details by its name
-```
-ViPRShell:/vdc/network-systems/urn:storageos:NetworkSystem:8c7be854-2a08-43f9-bb69-966d98ed278f:vdc1/san-fabrics/1/san-zones/>ls  
-Actions:-  
-PUT  POST  activate  remove  GET  
 
-ViPRShell:/vdc/network-systems/urn:storageos:NetworkSystem:8c7be854-2a08-43f9-bb69-966d98ed278f:vdc1/san-fabrics/1/san-zones/>GET help  
-Query Parameters:-  
-| Name            | Type       |  
-| exclude-members | xs:boolean |  
-| zone-name       | xs:string  |   
+	ViPRShell:/vdc/network-systems/urn:storageos:NetworkSystem:8c7be854-2a08-43f9-bb69-966d98ed278f:vdc1/san-fabrics/1/san-zones/>ls  
+	Actions:-  
+	PUT  POST  activate  remove  GET  
 
-ViPRShell:/vdc/network-systems/urn:storageos:NetworkSystem:8c7be854-2a08-43f9-bb69-966d98ed278f:vdc1/san-fabrics/1/san-zones/>GET -zone-name 'SDS_nh1_tz_fc_view_647316423649600_485565236431_0701_FA2F1'  
-| Name      | Value                                                      |  
-| san_zone  |                                                            |  
-|   name    | SDS_nh1_tz_fc_view_647316423649600_485565236431_0701_FA2F1 |  
-|   members |                                                            |  
-|     wwn   | 21:00:48:55:65:23:64:31                                    |  
-|     wwn   | 50:00:09:73:10:0A:F5:45                                    |  
+	ViPRShell:/vdc/network-systems/urn:storageos:NetworkSystem:8c7be854-2a08-43f9-bb69-966d98ed278f:vdc1/san-fabrics/1/san-zones/>GET help  
+		Query Parameters:-  
+	| Name            | Type       |  
+	| exclude-members | xs:boolean |  
+	| zone-name       | xs:string  |   
 
-ViPRShell:/vdc/network-systems/urn:storageos:NetworkSystem:8c7be854-2a08-43f9-bb69-966d98ed278f:vdc1/san-fabrics/1/san-zones/>GET -zone-name 'SDS_nh1_tz_fc_view_647316423649600_485565236431_0701_FA2F1' -exclude-members True  
-| Name      | Value                                                      |  
-| san_zone  |                                                            |  
-|   name    | SDS_nh1_tz_fc_view_647316423649600_485565236431_0701_FA2F1 |  
-|   members |                                                            |  
-```
+	ViPRShell:/vdc/network-systems/urn:storageos:NetworkSystem:8c7be854-2a08-43f9-bb69-966d98ed278f:vdc1/san-fabrics/1/san-zones/>GET -zone-name 'SDS_nh1_tz_fc_view_647316423649600_485565236431_0701_FA2F1'  
+	| Name      | Value                                                      |  
+	| san_zone  |                                                            |  
+	|   name    | SDS_nh1_tz_fc_view_647316423649600_485565236431_0701_FA2F1 |  
+	|   members |                                                            |  
+	|     wwn   | 21:00:48:55:65:23:64:31                                    |  
+	|     wwn   | 50:00:09:73:10:0A:F5:45                                    |  
+
+	ViPRShell:/vdc/network-systems/urn:storageos:NetworkSystem:8c7be854-2a08-43f9-bb69-966d98ed278f:vdc1/san-fabrics/1/san-zones/>GET -zone-name 'SDS_nh1_tz_fc_view_647316423649600_485565236431_0701_FA2F1' -exclude-members True  
+	| Name      | Value                                                      |  
+	| san_zone  |                                                            |  
+	|   name    | SDS_nh1_tz_fc_view_647316423649600_485565236431_0701_FA2F1 |  
+	|   members |                                                            |  
