@@ -123,8 +123,8 @@ json
 xml  
 
 _Examples_  
-`POST help
-POST json payload.json 
+`POST help  
+POST json payload.json   
 POST xml payload.xml`  
 
 Using paramters: create volume example  
@@ -139,8 +139,8 @@ json
 xml  
 
 _Examples_  
-`PUT help
-PUT json payload.json
+`PUT help  
+PUT json payload.json  
 PUT xml payload.xml`  
 
 ###GET  
@@ -153,7 +153,7 @@ _Options_
 `-accept {xml/json}`  
 
 _Examples_  
-`GET -accept xml
+`GET -accept xml  
 GET -accept json`  
 
 
@@ -198,6 +198,5 @@ GET -name vol1`
 Resource can be deleted if "deactivate" is found in "actions"  
 
 For example: to delete a block volume  
-`cd /block/volumes
+`cd /block/volumes  
 deactivate -id {volume_id}`
-
