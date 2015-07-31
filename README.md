@@ -137,7 +137,7 @@ _Examples_
 ```
 POST help  
 POST json payload.json  
-POST xml payload.xml
+POST xml payload.xml  
 ```
 
 Using paramters: create volume example  
@@ -154,9 +154,9 @@ xml
 
 _Examples_  
 ```
-PUT help
-PUT json payload.json
-PUT xml payload.xml 
+PUT help  
+PUT json payload.json  
+PUT xml payload.xml   
 ```  
 
 ### GET  
@@ -235,24 +235,27 @@ Query parameters can be sent in command just like other parameters. To get list 
 
 For example: to get a zone details by its name
 ```
-ViPRShell:/vdc/network-systems/urn:storageos:NetworkSystem:8c7be854-2a08-43f9-bb69-966d98ed278f:vdc1/san-fabrics/1/san-zones/>ls
-Actions:-
-PUT  POST  activate  remove  GET
-ViPRShell:/vdc/network-systems/urn:storageos:NetworkSystem:8c7be854-2a08-43f9-bb69-966d98ed278f:vdc1/san-fabrics/1/san-zones/>GET help
-Query Parameters:-
-| Name            | Type       |
-| exclude-members | xs:boolean |
-| zone-name       | xs:string  |
-ViPRShell:/vdc/network-systems/urn:storageos:NetworkSystem:8c7be854-2a08-43f9-bb69-966d98ed278f:vdc1/san-fabrics/1/san-zones/>GET -zone-name 'SDS_nh1_tz_fc_view_647316423649600_485565236431_0701_FA2F1'
-| Name      | Value                                                      |
-| san_zone  |                                                            |
-|   name    | SDS_nh1_tz_fc_view_647316423649600_485565236431_0701_FA2F1 |
-|   members |                                                            |
-|     wwn   | 21:00:48:55:65:23:64:31                                    |
-|     wwn   | 50:00:09:73:10:0A:F5:45                                    |
-ViPRShell:/vdc/network-systems/urn:storageos:NetworkSystem:8c7be854-2a08-43f9-bb69-966d98ed278f:vdc1/san-fabrics/1/san-zones/>GET -zone-name 'SDS_nh1_tz_fc_view_647316423649600_485565236431_0701_FA2F1' -exclude-members True
-| Name      | Value                                                      |
-| san_zone  |                                                            |
-|   name    | SDS_nh1_tz_fc_view_647316423649600_485565236431_0701_FA2F1 |
-|   members |                                                            |
+ViPRShell:/vdc/network-systems/urn:storageos:NetworkSystem:8c7be854-2a08-43f9-bb69-966d98ed278f:vdc1/san-fabrics/1/san-zones/>ls  
+Actions:-  
+PUT  POST  activate  remove  GET  
+
+ViPRShell:/vdc/network-systems/urn:storageos:NetworkSystem:8c7be854-2a08-43f9-bb69-966d98ed278f:vdc1/san-fabrics/1/san-zones/>GET help  
+Query Parameters:-  
+| Name            | Type       |  
+| exclude-members | xs:boolean |  
+| zone-name       | xs:string  |   
+
+ViPRShell:/vdc/network-systems/urn:storageos:NetworkSystem:8c7be854-2a08-43f9-bb69-966d98ed278f:vdc1/san-fabrics/1/san-zones/>GET -zone-name 'SDS_nh1_tz_fc_view_647316423649600_485565236431_0701_FA2F1'  
+| Name      | Value                                                      |  
+| san_zone  |                                                            |  
+|   name    | SDS_nh1_tz_fc_view_647316423649600_485565236431_0701_FA2F1 |  
+|   members |                                                            |  
+|     wwn   | 21:00:48:55:65:23:64:31                                    |  
+|     wwn   | 50:00:09:73:10:0A:F5:45                                    |  
+
+ViPRShell:/vdc/network-systems/urn:storageos:NetworkSystem:8c7be854-2a08-43f9-bb69-966d98ed278f:vdc1/san-fabrics/1/san-zones/>GET -zone-name 'SDS_nh1_tz_fc_view_647316423649600_485565236431_0701_FA2F1' -exclude-members True  
+| Name      | Value                                                      |  
+| san_zone  |                                                            |  
+|   name    | SDS_nh1_tz_fc_view_647316423649600_485565236431_0701_FA2F1 |  
+|   members |                                                            |  
 ```
