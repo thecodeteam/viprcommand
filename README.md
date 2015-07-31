@@ -1,8 +1,8 @@
 ViPR Shell provides command line interface for ViPR REST APIs.   
 
 #Supported Versions  
-ViPR: 2.2, 2.3  
-Python: 3.2.5, 3.4  
+**ViPR**: 2.2, 2.3
+**Python**: 3.2.5, 3.4
 
 #Install  
 
