@@ -11,7 +11,10 @@ import pickle
 from CLIInputs import CLIInputs
 from CLIInputs import ActionParams
 import CommonUtil
+import logging
 
+
+logger = logging.getLogger(__name__)
 cli_inputs = CLIInputs()
 ACTIONS_KEY = 'actions'
 ID_START = '{'
@@ -77,6 +80,8 @@ def parse_wadl(wadl_file_name):
                             child3_path = child3.get('path')
                             #path_arr = child3_path[1:].split('/')
                             path_arr = [x for x in child3_path.split('/') if x]
+                            if 'internal' in path_arr:
+                                continue
 
                             curr_context = parent_context
                             child3_dict = dict()
@@ -142,7 +147,7 @@ def look_for_post_actions(modify_values, curr_context, full_key):
             look_for_post_actions(modify_values, first_value, full_key + "/" + first_key)
 
 
-def create_inputs(pickle_file_name):
+def create_inputs(pickle_file_path):
     try:
         parse_wadl(CommonUtil.get_file_location('descriptors', 'application.xml'))
         parse_wadl(CommonUtil.get_file_location('descriptors', 'syssvc-application.xml'))
@@ -151,9 +156,11 @@ def create_inputs(pickle_file_name):
         XSDParser.parse_xsd(CommonUtil.get_file_location('descriptors', 'xsd0.xsd'), cli_inputs)
         XSDParser.parse_xsd(CommonUtil.get_file_location('descriptors', 'syssvc-xsd0.xsd'), cli_inputs)
 
-        with open(CommonUtil.get_file_location('pickles', pickle_file_name), 'wb') as f:
-            pickle.dump(cli_inputs, f)
+        with open(pickle_file_path, 'wb') as f:
+            # Cannot dump class, so dumping all its objects
+            pickle.dump(cli_inputs.wadl_context, f)
+            pickle.dump(cli_inputs.xsd_elements_dict, f)
+            pickle.dump(cli_inputs.unknown_xsd_elements_dict, f)
+            pickle.dump(cli_inputs.name_type_dict, f)
     except Exception as e:
-        print(e)
-        import traceback
-        traceback.print_exc()
+        logger.error(str(e))

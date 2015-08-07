@@ -10,10 +10,12 @@ import xml.dom.minidom
 import xml.etree.ElementTree as ET
 import os
 import Constants
+import logging
 
 cli_utils = None
+logger = logging.getLogger(__name__)
 
-def print_table( table):
+def print_table(table):
     col_width = [max(len(str(x)) for x in col) for col in zip(*table)]
     for line in table:
         print("| " + " | ".join("{0:{1}}".format(x, col_width[i])
@@ -200,12 +202,15 @@ def find_paths(found_paths, curr_context, find_me, full_key=''):
         if isinstance(first_value, dict):
             find_paths(found_paths, first_value, find_me, path_now)
 
+# There may be multiple search paths for a key
+# Example: key=vpool paths=/block/vpools/search, /file/vpools/search
 def get_search_path_by_key(key, context):
+    paths = []
     found_paths = list()
     find_paths(found_paths, context, key)
     search_path = key+"s/search"
     for p in found_paths:
         if search_path in p:
-            return p
-    return None
+            paths.append(p)
+    return paths
 

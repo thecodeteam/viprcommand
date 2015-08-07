@@ -10,7 +10,9 @@ import requests
 requests.packages.urllib3.disable_warnings()
 import xml.etree.ElementTree as ET
 import ConfigUtil
+import logging
 
+logger = logging.getLogger(__name__)
 LOGIN_URI = "/login"
 LOGOUT_URI = "/logout"
 SEC_AUTHTOKEN_HEADER = "X-SDS-AUTH-TOKEN"
@@ -31,7 +33,7 @@ def login(user, password):
         session.close()
     session = requests.session()
     response = session.get(url, auth=(user, password), verify=False, headers=headers)
-    #self.print_package(response)
+    logger.info(response)
     if response.status_code != requests.codes['ok']:
         # for invalid credentials ViPR returns html
         if 'text/html' in response.headers['Content-Type']:
@@ -62,6 +64,9 @@ def submitHttpRequest(httpMethod, uri, token, contentType='application/json', pa
     headers = getHeaders(token, contentType, xml)
     url = _getURL(uri)
 
+    logger.info("%s %s" % (httpMethod, uri))
+    if payload:
+        logger.info(payload)
     if httpMethod == 'GET':
         response = session.get(url, verify=False, headers=headers)
     elif httpMethod == 'POST':
@@ -71,9 +76,10 @@ def submitHttpRequest(httpMethod, uri, token, contentType='application/json', pa
     else:
         raise Exception("Unknown/Unsupported HTTP method: " + httpMethod)
     if response.status_code == requests.codes['ok'] or response.status_code == 202:
-            #_logger.debug("Response: %s" % response.text)
+            logger.debug("Response: %s" % response.text)
             return response
     else:
+        logger.error("Request failed: %s" % response.status_code)
         if response.status_code == 401:
             # 401 response is html, so not parsing response
             error_details = "Unauthorized"
@@ -83,6 +89,7 @@ def submitHttpRequest(httpMethod, uri, token, contentType='application/json', pa
             error_details = root.find("head/title").text
         else:
             error_json = json.loads(response.text)
+            logger.info(error_json)
             if "details" in error_json:
                 error_details = error_json["details"]
             else:

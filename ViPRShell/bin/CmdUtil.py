@@ -14,7 +14,9 @@ import xml.dom.minidom
 import shlex
 import xml.etree.cElementTree as ET
 import ConfigUtil
+import logging
 
+logger = logging.getLogger(__name__)
 ID_KEY = '{id}'
 BULK_KEY = 'bulk'
 RESPONSE_TYPE_KEY = 'accept'
@@ -42,12 +44,14 @@ class MyCmd(Cmd):
 
     def do_quit(self, args):
         """Quits the program."""
+        logger.info("CMD: quit")
         self.do_logout(args)
         print("Quitting.")
         raise SystemExit
 
     def do_ls(self, args):
         """ lists resources """
+        logger.info("CMD: ls %s" % args)
         try:
             if args:
                 if args.startswith('/'):
@@ -77,6 +81,7 @@ class MyCmd(Cmd):
                             self.__print_bulk_response(response.text)
                     except Exception as e:
                         print(str(e))
+                        logger.error(str(e))
                 elif ID_KEY in temp_context and ACTIONS_KEY in temp_context and 'GET' in temp_context[ACTIONS_KEY]:
                     # Print ids if 'GET' is present
                     sub_context.remove(ID_KEY)
@@ -87,6 +92,7 @@ class MyCmd(Cmd):
                             self.__print_get_all_response(response.text)
                     except Exception as e:
                         print(str(e))
+                        logger.error(str(e))
 
                 print('  '.join(sub_context))
 
@@ -101,6 +107,7 @@ class MyCmd(Cmd):
 
     def do_ll(self, args):
         """ List resources in detail """
+        logger.info("CMD: ll %s" % args)
         try:
             if args:
                 if args.startswith('/'):
@@ -132,6 +139,7 @@ class MyCmd(Cmd):
                                 self.__print_ll_response(detail_response.text)
                     except Exception as e:
                         print(str(e))
+                        logger.error(str(e))
 
                 elif ID_KEY in temp_context and ACTIONS_KEY in temp_context and 'GET' in temp_context[ACTIONS_KEY]:
                     # Print ids if 'GET' is present
@@ -143,6 +151,7 @@ class MyCmd(Cmd):
                             self.__print_ll_response(response.text)
                     except Exception as e:
                         print(str(e))
+                        logger.error(str(e))
 
                 print('  '.join(sub_context))
 
@@ -153,9 +162,11 @@ class MyCmd(Cmd):
                 print('Wrong path')
         except Exception as e:
             print(str(e))
+            logger.error(str(e))
 
     def do_cd(self, args):
         """change context"""
+        logger.info("CMD: cd %s" % args)
         global curr_context, curr_path
         if args:
             if args == '..':
@@ -173,6 +184,7 @@ class MyCmd(Cmd):
                         curr_path = ''
                 else:
                     print('Wrong path')
+                    logger.error("Wrong path %s" % args)
             else:
                 temp_context = self.__get_context_for_path(args, curr_context)
                 if temp_context:
@@ -180,11 +192,13 @@ class MyCmd(Cmd):
                     curr_path += '/' + args
                 else:
                     print('Wrong path')
+                    logger.error("Wrong path %s" % args)
             self.prompt = 'ViPRShell:' + curr_path + '/>'
         return
 
     def do_GET(self, args):
         """ GET resource """
+        logger.info("CMD: GET %s" % args)
         try:
             if ACTIONS_KEY not in curr_context:
                 print('GET is not available')
@@ -207,9 +221,11 @@ class MyCmd(Cmd):
                 self.__print_response(response.text, accept_type)
         except Exception as e:
             print(str(e))
+            logger.error(str(e))
 
     def do_POST(self, args):
         """ Create resource """
+        logger.info("CMD: POST %s" % args)
         global execute_action
         try:
             if ACTIONS_KEY not in curr_context:
@@ -241,9 +257,11 @@ class MyCmd(Cmd):
                 self.__print_response(response.text)
         except Exception as e:
             print(str(e))
+            logger.error(str(e))
 
     def do_PUT(self, args):
         """ Update resource """
+        logger.info("CMD: PUT %s" % args)
         try:
             if ACTIONS_KEY not in curr_context:
                 print('PUT is not available')
@@ -263,9 +281,11 @@ class MyCmd(Cmd):
                 self.__print_response(response.text)
         except Exception as e:
             print(str(e))
+            logger.error(str(e))
 
     def do_login(self, args):
         """ Log into ViPR """
+        logger.info("CMD: login %s" % args)
         if not args:
             print("login -username name -password pswd")
         else:
@@ -281,21 +301,31 @@ class MyCmd(Cmd):
                         f.write(cookie)
             except Exception as e:
                 print(str(e))
+                logger.error(str(e))
 
     def do_logout(self, args):
         """ Log out from ViPR """
+        cookie = None
+        logger.info("CMD: logout")
         try:
-            cookie = self.__get_cookie()
+            try:
+                cookie = self.__get_cookie()
+            except Exception as e:
+                logger.info("Cookie not found")
+                pass
             if cookie:
                 print("Logging out")
+                logger.info("Logging out user")
                 ViPRConnection.logout(cookie)
                 os.remove(os.path.join(ConfigUtil.COOKIE_DIR_ABS_PATH, COOKIE_FILE_NAME))
         except Exception as e:
             print(str(e))
+            logger.error(str(e))
 
     # TODO: make this recursive
     def do_find(self, args):
         """ Search for context """
+        logger.info("CMD: find %s" % args)
         if not args:
             return
         args_arr = args.split()
@@ -344,6 +374,7 @@ class MyCmd(Cmd):
 
         except Exception as e:
             print(str(e))
+            logger.error(str(e))
         finally:
             execute_action = None
 
@@ -585,11 +616,14 @@ class MyCmd(Cmd):
 
     def __get_id_by_key(self, key, search_name, search_context):
         try:
-            search_path = CommonUtil.get_search_path_by_key(key, search_context)
+            search_paths = CommonUtil.get_search_path_by_key(key, search_context)
             cookie = self.__get_cookie()
-            response = ViPRConnection.submitHttpRequest('GET', search_path+"?name="+search_name, cookie)
-            if response:
-                search_json = json.loads(response.text)
-                return search_json["resource"][0]["id"]
+            # search for this name in all search paths
+            for path in search_paths:
+                response = ViPRConnection.submitHttpRequest('GET', path+"?name="+search_name, cookie)
+                if response:
+                    search_json = json.loads(response.text)
+                    if search_json and search_json["resource"]:
+                        return search_json["resource"][0]["id"]
         except Exception:
             raise Exception("Name: %s not found" % search_name)
