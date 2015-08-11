@@ -55,7 +55,9 @@ try:
             sys.exit()
         user = sys.argv[2]
         pswd = sys.argv[4]
+        print("Connecting to ViPR: %s" % ConfigUtil.VIPR_HOST)
     else:
+        print("Connecting to ViPR: %s" % ConfigUtil.VIPR_HOST)
         user = input("login as: ")
         pswd = getpass.getpass()
 
