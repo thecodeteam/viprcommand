@@ -1,9 +1,10 @@
 """
-Copyright 2015 EMC Corporation
-All Rights Reserved
-EMC Confidential: Restricted Internal Distribution
-81ff427ffd0a66013a8e07b7b967d6d6b5f06b1b.ViPR
+Copyright EMC Corporation 2015.
+Distributed under the MIT License.
+(See accompanying file LICENSE or copy at http://opensource.org/licenses/MIT)
 """
+
+""" This class parses config file: cli_config.ini """
 
 import configparser
 import sys
@@ -16,6 +17,7 @@ VIPR_PORT = 4443
 COOKIE_DIR_ABS_PATH = None
 
 
+# This method is called once when main class is invoked
 def load_config():
     logger = logging.getLogger(__name__)
     global VIPR_HOST, VIPR_PORT, COOKIE_DIR_ABS_PATH

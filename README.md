@@ -1,29 +1,29 @@
-ViPR Shell provides command line interface for ViPR REST APIs.   
+ViPR Command provides command line interface for ViPR REST APIs.   
 
-# Supported Versions  
+# Dependencies  
 **ViPR**: 2.2, 2.3  
-**Python**: 3.2.5, 3.4
+**Python**: 3.2.5, 3.4 (Additional modules: requests, configparser)  
 
 # Install  
 
 1.	Copy downloaded package to any location  
 2.	Windows only: Open cmd prompt  
-3.	Navigate to ViPR shell downloaded folder  
+3.	Navigate to ViPR command downloaded folder  
 4.	Navigate to "config" folder and enter your ViPR host in cli_config.ini.  
 5.	Navigate to "bin" folder  
-6.	Type `python ViPRShell.py` and press ENTER. The log in prompt appears:  
+6.	Type `python ViPRCommand.py` and press ENTER. The log in prompt appears:  
         login as:  
         Type ViPR username and press ENTER. A password prompt appears:  
         Password:  
         Type password and press ENTER.    
         Instead you could also run 
 ```
-python ViPRShell.py -username {user} -password {pswd}
+python ViPRCommand.py -username {user} -password {pswd}
 ```  
  
 # Context tree  
   
-After logging into ViPR Shell it will initially land in root context. From there using "cd" command (explained below) one can navigate to different contexts and sub-contexts. There are 3 components to each context: resources, sub-context and actions.  
+After logging into ViPR Command it will initially land in root context. From there using "cd" command (explained below) one can navigate to different contexts and sub-contexts. There are 3 components to each context: resources, sub-context and actions.  
 
 _Resources_:  these are ViPR resources in current context, identified by URN. To navigate to resource, use "cd {resource_urn}". 
 
@@ -86,7 +86,7 @@ _Example_
 
 
 ### quit  
-This command will exit ViPR Shell  
+This command will exit ViPR Command  
 
 ## REST operations  
 
@@ -178,7 +178,7 @@ _Examples_
 ### Others  
 All "Actions" can be run as commands. Run "help" on them and check if they require any parameters.  
 
-    ViPRShell:/block/volumes/urn:storageos:Volume:00088e2e-7510-4be7-9a30-75d1bcdc29ab:vdc1/> expand help  
+    ViPRCommand:/block/volumes/urn:storageos:Volume:00088e2e-7510-4be7-9a30-75d1bcdc29ab:vdc1/> expand help  
     Payload Fields:-  
     | NAME     | TYPE      | MIN | MAX |  
     | new_size | xs:string | 1   | 1   |  
@@ -232,17 +232,17 @@ Query parameters can be sent in command just like other parameters. To get list 
 
 For example: to get a zone details by its name
 
-	ViPRShell:/vdc/network-systems/urn:storageos:NetworkSystem:8c7be854-2a08-43f9-bb69-966d98ed278f:vdc1/san-fabrics/1/san-zones/>ls  
+	ViPRCommand:/vdc/network-systems/urn:storageos:NetworkSystem:8c7be854-2a08-43f9-bb69-966d98ed278f:vdc1/san-fabrics/1/san-zones/>ls  
 	Actions:-  
 	PUT  POST  activate  remove  GET  
 
-	ViPRShell:/vdc/network-systems/urn:storageos:NetworkSystem:8c7be854-2a08-43f9-bb69-966d98ed278f:vdc1/san-fabrics/1/san-zones/>GET help  
+	ViPRCommand:/vdc/network-systems/urn:storageos:NetworkSystem:8c7be854-2a08-43f9-bb69-966d98ed278f:vdc1/san-fabrics/1/san-zones/>GET help  
 		Query Parameters:-  
 	| Name            | Type       |  
 	| exclude-members | xs:boolean |  
 	| zone-name       | xs:string  |   
 
-	ViPRShell:/vdc/network-systems/urn:storageos:NetworkSystem:8c7be854-2a08-43f9-bb69-966d98ed278f:vdc1/san-fabrics/1/san-zones/>GET -zone-name 'SDS_nh1_tz_fc_view_647316423649600_485565236431_0701_FA2F1'  
+	ViPRCommand:/vdc/network-systems/urn:storageos:NetworkSystem:8c7be854-2a08-43f9-bb69-966d98ed278f:vdc1/san-fabrics/1/san-zones/>GET -zone-name 'SDS_nh1_tz_fc_view_647316423649600_485565236431_0701_FA2F1'  
 	| Name      | Value                                                      |  
 	| san_zone  |                                                            |  
 	|   name    | SDS_nh1_tz_fc_view_647316423649600_485565236431_0701_FA2F1 |  
@@ -250,7 +250,7 @@ For example: to get a zone details by its name
 	|     wwn   | 21:00:48:55:65:23:64:31                                    |  
 	|     wwn   | 50:00:09:73:10:0A:F5:45                                    |  
 
-	ViPRShell:/vdc/network-systems/urn:storageos:NetworkSystem:8c7be854-2a08-43f9-bb69-966d98ed278f:vdc1/san-fabrics/1/san-zones/>GET -zone-name 'SDS_nh1_tz_fc_view_647316423649600_485565236431_0701_FA2F1' -exclude-members True  
+	ViPRCommand:/vdc/network-systems/urn:storageos:NetworkSystem:8c7be854-2a08-43f9-bb69-966d98ed278f:vdc1/san-fabrics/1/san-zones/>GET -zone-name 'SDS_nh1_tz_fc_view_647316423649600_485565236431_0701_FA2F1' -exclude-members True  
 	| Name      | Value                                                      |  
 	| san_zone  |                                                            |  
 	|   name    | SDS_nh1_tz_fc_view_647316423649600_485565236431_0701_FA2F1 |  

@@ -1,8 +1,11 @@
 """
-Copyright 2015 EMC Corporation
-All Rights Reserved
-EMC Confidential: Restricted Internal Distribution
-81ff427ffd0a66013a8e07b7b967d6d6b5f06b1b.ViPR
+Copyright EMC Corporation 2015.
+Distributed under the MIT License.
+(See accompanying file LICENSE or copy at http://opensource.org/licenses/MIT)
+"""
+
+"""
+This is main class when invoked will connect to ViPR and open prompt to run commands.
 """
 
 from CmdUtil import MyCmd
@@ -41,17 +44,17 @@ try:
     log_config_path = CommonUtil.get_file_location('config', 'logging.conf')
     if not os.path.exists(logs_dir):
         os.makedirs(logs_dir)
-    os.environ['ViPR_SHELL_LOG_DIR'] = logs_dir
+    os.environ['ViPR_COMMAND_LOG_DIR'] = logs_dir
     logging.config.fileConfig(log_config_path, disable_existing_loggers=False)
     logger = logging.getLogger(__name__)
-    logger.info("## Starting ViPRShell ##")
+    logger.info("## Starting ViPRCommand ##")
 
     ConfigUtil.load_config()
 
     # Get username, password from arguments or prompt user
     if sys.argv and len(sys.argv) > 1:
         if sys.argv[1] == "help" or len(sys.argv) != 5:
-            print("python ViPRShell -u name -p password")
+            print("python ViPRCommand -u name -p password")
             sys.exit()
         user = sys.argv[2]
         pswd = sys.argv[4]
@@ -65,12 +68,13 @@ try:
     cookie = login(user, pswd)
     logger.info("Logged in as user %s" % user)
 
-    # Get ViPR version
+    # Get ViPR version - used to name pickle file
     response = ViPRConnection.submitHttpRequest('GET', VERSION_URI, cookie)
     version_json = json.loads(response.text)
     vipr_version = version_json["target_version"]
     logger.info("ViPR Version: %s" % vipr_version)
 
+    # pickle file name format:  {vipr_version}-context.pickle
     pickle_file_name = Constants.PICKLE_FILE_NAME.format(vipr_version)
     pickle_dir_path = CommonUtil.get_file_dir_location('pickles')
     pickle_file_path = os.path.join(pickle_dir_path, pickle_file_name)
@@ -107,8 +111,10 @@ try:
         with open(os.path.join(descriptors_dir_path, 'syssvc-xsd0.xsd'), 'w+') as f:
             f.write(response.text)
 
+        # Parse WADLs and XSDs and store data to pickle file
         CreateInputs.create_inputs(pickle_file_path)
 
+    # Read pickle file and store to variable: cli_inputs
     with open(pickle_file_path, 'rb') as f:
         cli_inputs = CLIInputs()
         cli_inputs.wadl_context = pickle.load(f)
@@ -117,8 +123,8 @@ try:
         cli_inputs.name_type_dict = pickle.load(f)
 
     prompt = MyCmd(cli_inputs)
-    prompt.prompt = 'ViPRShell:/> '
-    prompt.cmdloop('Starting ViPR Shell...')
+    prompt.prompt = 'ViPRCommand:/> '
+    prompt.cmdloop('Starting ViPR Command...')
 
 except Exception as e:
-    print("Exception in bin.ViPRShell " + str(e))
+    print(str(e))

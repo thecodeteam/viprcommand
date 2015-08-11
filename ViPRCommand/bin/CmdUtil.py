@@ -1,8 +1,13 @@
 """
-Copyright 2015 EMC Corporation
-All Rights Reserved
-EMC Confidential: Restricted Internal Distribution
-81ff427ffd0a66013a8e07b7b967d6d6b5f06b1b.ViPR
+Copyright EMC Corporation 2015.
+Distributed under the MIT License.
+(See accompanying file LICENSE or copy at http://opensource.org/licenses/MIT)
+"""
+
+"""
+This module has a class that is subclass of 'Cmd'.
+It has implementations for all supported commands.
+To add a new command, create method here: do_{newcmd}
 """
 
 from cmd import Cmd
@@ -165,7 +170,7 @@ class MyCmd(Cmd):
             logger.error(str(e))
 
     def do_cd(self, args):
-        """change context"""
+        """ Change context """
         logger.info("CMD: cd %s" % args)
         global curr_context, curr_path
         if args:
@@ -193,7 +198,7 @@ class MyCmd(Cmd):
                 else:
                     print('Wrong path')
                     logger.error("Wrong path %s" % args)
-            self.prompt = 'ViPRShell:' + curr_path + '/>'
+            self.prompt = 'ViPRCommand:' + curr_path + '/>'
         return
 
     def do_GET(self, args):
@@ -337,6 +342,7 @@ class MyCmd(Cmd):
 
 
     def completedefault(self, text, line, begidx, endidx):
+        """ Completes context on tab """
         if not text or text == '/':
             completions = list(self._context.keys())
         else:
@@ -348,7 +354,7 @@ class MyCmd(Cmd):
         return completions
 
     def emptyline(self):
-        """Do nothing on empty input line"""
+        """ Do nothing on empty input line """
         pass
 
     # TODO: args[0] can be path
@@ -358,6 +364,7 @@ class MyCmd(Cmd):
             if not args:
                 return
 
+            # Check if command is part of 'Actions'. If not, it is unknown command.
             args_arr = args.split()
             action = args_arr[0]
             if ACTIONS_KEY not in curr_context:
@@ -379,6 +386,7 @@ class MyCmd(Cmd):
             execute_action = None
 
     def __get_context_for_path(self, path, context_search):
+        """ This method searches for path in the passed context """
         temp_context = context_search
         if path:
             path_arr = path.split('/')
@@ -396,6 +404,7 @@ class MyCmd(Cmd):
         return temp_context
 
     def __get_completions_for_partial_path(self, path, context_search, start=False):
+        """ This method returns partial path completions that are used for 'tab' command results """
         path_arr = path.split('/')
         temp_context = context_search
         completions = []
@@ -420,6 +429,7 @@ class MyCmd(Cmd):
         return completions
 
     def __get_cookie(self):
+        """ This method reads cookie from file and return """
         cookie = ''
         cf_path = os.path.join(ConfigUtil.COOKIE_DIR_ABS_PATH, COOKIE_FILE_NAME)
         if os.path.isfile(cf_path):
@@ -430,6 +440,7 @@ class MyCmd(Cmd):
         return cookie
 
     def __read_payload_file(self, fname):
+        """ This method reads the passed file and return its content """
         payload = None
         if os.path.isfile(fname):
             with open(fname, 'r') as f:
@@ -439,12 +450,14 @@ class MyCmd(Cmd):
         return payload
 
     def __print_bulk_response(self, response_text):
+        """ This method prints 'bulk' API response """
         response_json = json.loads(response_text)
         if response_json and response_json['id']:
             print('\n'.join(response_json['id']))
             print('')
 
     def __print_get_all_response(self, response_text):
+        """ This method parses passed response and prints ids """
         response_json = json.loads(response_text)
         if response_json:
             ids = list()
@@ -464,6 +477,7 @@ class MyCmd(Cmd):
                 print('\n'.join(ids))
 
     def __print_ll_response(self, response_text):
+        """ This method prints ids and names """
         response_json = json.loads(response_text)
         if response_json:
             table = [('ID', 'NAME')]

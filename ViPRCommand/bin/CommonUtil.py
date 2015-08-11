@@ -1,11 +1,11 @@
 """
-Copyright 2015 EMC Corporation
-All Rights Reserved
-EMC Confidential: Restricted Internal Distribution
-81ff427ffd0a66013a8e07b7b967d6d6b5f06b1b.ViPR
+Copyright EMC Corporation 2015.
+Distributed under the MIT License.
+(See accompanying file LICENSE or copy at http://opensource.org/licenses/MIT)
 """
 
-import json
+""" Utility class with all helper methods """
+
 import xml.dom.minidom
 import xml.etree.ElementTree as ET
 import os
@@ -176,8 +176,8 @@ def __prepare_attributes_xml(xsd_element, help_xml):
         if xsd_element.children:
             for c in xsd_element.children:
                 __prepare_attributes_xml(c, new_xml)
-
     return
+
 def get_parent_dir_location():
     src_dir = os.path.dirname( __file__ )
     parent_dir = os.path.split(src_dir)[0]
@@ -188,7 +188,6 @@ def get_file_dir_location(file_dir):
 
 def get_file_location(file_dir, filename):
     return os.path.join(get_file_dir_location(file_dir), filename)
-
 
 def find_paths(found_paths, curr_context, find_me, full_key=''):
     for first_key, first_value in curr_context.items():

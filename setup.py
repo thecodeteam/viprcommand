@@ -2,14 +2,13 @@
 from setuptools import setup
 
 setup(
-    name='viprshell',
-    version='15.7',
-    packages=['ViPRShell',
-              'ViPRShell.bin',
-              'ViPRShell.config'],
+    name='viprcommand',
+    version='15.8',
+    packages=['ViPRCommand',
+              'ViPRCommand.bin',
+              'ViPRCommand.config'],
     package_data={
-        #Include python and .ini files
-        'ViPRShell.config': ['*.ini']
+        'ViPRCommand.config': ['*.ini']
     },
     install_requires=[
         'requests',
@@ -26,9 +25,9 @@ setup(
         'Topic :: Software Development :: Libraries :: Application Frameworks',
 
         # Pick your license as you wish (should match "license" above)
-        'License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)',
+        'License :: OSI Approved :: MIT License',
 
     ],
-    license='MPL 2.0 ',
-    description='ViPR Shell',
+    license='MIT',
+    description='ViPR Command',
 )

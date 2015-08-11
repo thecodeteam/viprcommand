@@ -1,13 +1,13 @@
 """
-Copyright 2015 EMC Corporation
-All Rights Reserved
-EMC Confidential: Restricted Internal Distribution
-81ff427ffd0a66013a8e07b7b967d6d6b5f06b1b.ViPR
+Copyright EMC Corporation 2015.
+Distributed under the MIT License.
+(See accompanying file LICENSE or copy at http://opensource.org/licenses/MIT)
 """
+
+""" This class parses XSD and create inputs that are later used by all commands """
 
 import xml.etree.ElementTree as ET
 from CLIInputs import XSDElement
-from CLIInputs import ChildXSDElement
 
 cli_inputs = None
 

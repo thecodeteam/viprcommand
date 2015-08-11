@@ -1,3 +1,9 @@
+"""
+Copyright EMC Corporation 2015.
+Distributed under the MIT License.
+(See accompanying file LICENSE or copy at http://opensource.org/licenses/MIT)
+"""
+
 import sys
 import os
 package_dir = os.path.dirname(__file__) or '.'
