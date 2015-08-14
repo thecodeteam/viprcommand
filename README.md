@@ -1,10 +1,16 @@
+# ViPR Command
+
 ViPR Command provides command line interface for ViPR REST APIs.   
 
-# Dependencies  
+## Introduction
+Application that provides unix/linux shell-like command line interface (CLI) for ViPR APIs. It uses WADL & XSD to auto generate the interface. It can be used with any ViPR version. 
+
+
+## Dependencies  
 **ViPR**: 2.2, 2.3  
 **Python**: 3.2.5, 3.4 (Additional modules: requests, configparser)  
 
-# Install  
+## Install  
 
 1.	Copy downloaded package to any location  
 2.	Windows only: Open cmd prompt  
