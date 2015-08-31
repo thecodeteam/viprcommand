@@ -1,6 +1,6 @@
 # ViPR Command
 
-ViPR Command provides command line interface for ViPR REST APIs.
+ViPR Command provides command line interface for [ViPR Controller](http://www.emc.com/vipr) / [COPRHD](https://coprhd.github.io/) REST APIs.
 
 ### Contents
 
