@@ -12,11 +12,11 @@ ViPR Command provides command line interface for [ViPR Controller](http://www.em
 - [Contributing to ViPRCommand](#contributing-to-viprcommand)
 
 ## Introduction
-Application that provides unix/linux shell-like command line interface (CLI) for ViPR APIs. It uses WADL & XSD to auto generate the interface. It can be used with any ViPR version.
+Application that provides unix/linux shell-like command line interface (CLI) for ViPR APIs. It uses WADL & XSD to auto generate the interface. It can be used with any ViPR version that has WADL and XSD available.
 
 
 ## Dependencies  
-**ViPR**: 2.2, 2.3  
+**ViPR**: 2.3  
 **Python**: 3.2.5, 3.4 (Additional modules: requests, configparser)  
 
 ## Install  
