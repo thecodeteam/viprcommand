@@ -24,9 +24,10 @@ Application that provides unix/linux shell-like command line interface (CLI) for
 1.	Copy downloaded package to any location  
 2.	Windows only: Open cmd prompt  
 3.	Navigate to ViPR command downloaded folder  
-4.	Navigate to "config" folder and enter your ViPR host in cli_config.ini.  
-5.	Navigate to "bin" folder  
-6.	Type `python ViPRCommand.py` and press ENTER. The log in prompt appears:  
+4.  Type `python setup.py install` to install dependent modules.  
+5.	Navigate to "config" folder and enter your ViPR host in cli_config.ini.  
+6.	Navigate to "bin" folder  
+7.	Type `python ViPRCommand.py` and press ENTER. The log in prompt appears:  
         login as:  
         Type ViPR username and press ENTER. A password prompt appears:  
         Password:  
