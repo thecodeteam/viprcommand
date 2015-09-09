@@ -1,7 +1,6 @@
 #!/usr/bin/python
 import os
 from setuptools import setup
-from subprocess import Popen
 
 setup(
     name='viprcommand',
@@ -33,5 +32,4 @@ setup(
     license='MIT',
     description='ViPR Command',
 )
-p = Popen("installer.bat", cwd=os.path.dirname(os.path.realpath(__file__)))
-stdout, stderr = p.communicate()
+os.system("SETX PATH "+os.path.dirname(os.path.realpath(__file__))+"/ViPRCommand/bin")
