@@ -33,7 +33,8 @@ setup(
     license='MIT',
     description='ViPR Command',
 )
+bin_dir_path = os.path.dirname(os.path.realpath(__file__))
 if platform.system() == "Windows":
-    os.system("SETX PATH "+os.path.dirname(os.path.realpath(__file__))+"/ViPRCommand/bin")
+    os.system("SETX PATH "+ bin_dir_path +"/ViPRCommand/bin")
 else:
-    os.system("echo \'export PATH="+os.path.dirname(os.path.realpath(__file__))+"/ViPRCommand/bin:$PATH\'>>~/.bashrc")
+    os.system("echo \'export PATH="+ bin_dir_path +"/ViPRCommand/bin:$PATH\'>>~/.bashrc")
