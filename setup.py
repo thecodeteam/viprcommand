@@ -1,5 +1,6 @@
 #!/usr/bin/python
 import os
+import platform
 from setuptools import setup
 
 setup(
@@ -32,5 +33,7 @@ setup(
     license='MIT',
     description='ViPR Command',
 )
-os.system("SETX PATH "+os.path.dirname(os.path.realpath(__file__))+"/ViPRCommand/bin")
-os.system("echo \'export PATH="+os.path.dirname(os.path.realpath(__file__))+"/ViPRCommand/bin:$PATH\'>>~/.bashrc")
+if platform.system() == "Windows":
+    os.system("SETX PATH "+os.path.dirname(os.path.realpath(__file__))+"/ViPRCommand/bin")
+else:
+    os.system("echo \'export PATH="+os.path.dirname(os.path.realpath(__file__))+"/ViPRCommand/bin:$PATH\'>>~/.bashrc")
