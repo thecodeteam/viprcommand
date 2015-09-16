@@ -33,7 +33,7 @@ setup(
     license='MIT',
     description='ViPR Command',
 )
-bin_dir_path = os.path.dirname(os.path.realpath(__file__))
+bin_dir_path = os.path.dirname(os.path.realpath(__file__)) + "/ViPRCommand/bin"
 if platform.system() == "Windows":
     os.system("SETX PATH " + bin_dir_path)
 else:
