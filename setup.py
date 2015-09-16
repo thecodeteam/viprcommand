@@ -33,3 +33,4 @@ setup(
     description='ViPR Command',
 )
 os.system("SETX PATH "+os.path.dirname(os.path.realpath(__file__))+"/ViPRCommand/bin")
+os.system("echo \'export PATH="+os.path.dirname(os.path.realpath(__file__))+"/ViPRCommand/bin:$PATH\'>>~/.bashrc")
