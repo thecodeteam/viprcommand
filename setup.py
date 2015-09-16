@@ -35,6 +35,6 @@ setup(
 )
 bin_dir_path = os.path.dirname(os.path.realpath(__file__))
 if platform.system() == "Windows":
-    os.system("SETX PATH "+ bin_dir_path +"/ViPRCommand/bin")
+    os.system("SETX PATH " + bin_dir_path)
 else:
-    os.system("echo \'export PATH="+ bin_dir_path +"/ViPRCommand/bin:$PATH\'>>~/.bashrc")
+    os.system("echo \'export PATH=" + bin_dir_path + ":$PATH\'>>~/.bashrc")
