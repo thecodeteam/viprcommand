@@ -39,3 +39,5 @@ if platform.system() == "Windows":
 else:
     os.system("echo \'export PATH=" + bin_dir_path + ":$PATH\'>>~/.bashrc")
 #loremipsum
+#this is another test
+#grave
