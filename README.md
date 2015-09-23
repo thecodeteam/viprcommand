@@ -33,7 +33,7 @@ Application that provides unix/linux shell-like command line interface (CLI) for
         Type password and press ENTER.
         Instead you could also run
 ```
-python ViPRCommand.py -username {user} -password {pswd}
+viprcommand -username {user} -password {pswd}
 ```  
 
 # Context tree  
