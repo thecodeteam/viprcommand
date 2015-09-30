@@ -1,4 +1,8 @@
 #!/usr/bin/python
+import os
+import platform
+
+os.system("python ez_setup.py")
 from setuptools import setup
 
 setup(
@@ -31,3 +35,9 @@ setup(
     license='MIT',
     description='ViPR Command',
 )
+bin_dir_path = os.path.dirname(os.path.realpath(__file__)) + "/ViPRCommand/bin"
+if platform.system() == "Windows":
+    os.system("SETX PATH " + bin_dir_path)
+else:
+    os.system("echo \'export PATH=" + bin_dir_path + ":$PATH\'>>~/.bashrc")
+    os.system("chmod +x " + bin_dir_path + "/viprcommand")
