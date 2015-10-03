@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+<<<<<<< HEAD
 
 """
 Setuptools bootstrapping installer.
@@ -18149,3 +18149,4 @@ CCv#a4k13F)lJLWNCABEop9MZ!c0sLr+pfP)h{{00000>;UWlXG{P9!Ke@b000
 
 if __name__ == "__main__":
     main()
+>>>>>>> 88cd34012c0e9a11baef1c6586ab5ae974e46310
