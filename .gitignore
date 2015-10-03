@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
+ez_setup.py~
 
 # C extensions
 *.so
