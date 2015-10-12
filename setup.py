@@ -1,8 +1,6 @@
 #!/usr/bin/python
 import os
 import platform
-
-os.system("python ez_setup.py")
 from setuptools import setup
 
 setup(
