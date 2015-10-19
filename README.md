@@ -48,12 +48,6 @@ type in the commnad line "python --version".
 viprcommand -username {user} -password {pswd}
 ```  
 
-## Install Setuptools
-
-Follow these steps only if you have python 2.7.
-If you don't know what version of python you have,
-type in the commnad line "python --version".
-
 # Context tree  
 
 After logging into ViPR Command it will initially land in root context. From there using "cd" command (explained below) one can navigate to different contexts and sub-contexts. There are 3 components to each context: resources, sub-context and actions.  
