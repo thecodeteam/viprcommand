@@ -1,3 +1,4 @@
+#! /usr/bin/env python
 """
 Copyright EMC Corporation 2015.
 Distributed under the MIT License.
@@ -61,6 +62,8 @@ try:
         print("Connecting to ViPR: %s" % ConfigUtil.VIPR_HOST)
     else:
         print("Connecting to ViPR: %s" % ConfigUtil.VIPR_HOST)
+        try: input = raw_input
+        except NameError: pass
         user = input("login as: ")
         pswd = getpass.getpass()
 

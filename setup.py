@@ -38,3 +38,4 @@ if platform.system() == "Windows":
     os.system("SETX PATH " + bin_dir_path)
 else:
     os.system("echo \'export PATH=" + bin_dir_path + ":$PATH\'>>~/.bashrc")
+    os.system("chmod +x " + bin_dir_path + "/viprcommand")

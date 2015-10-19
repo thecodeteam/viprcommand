@@ -17,13 +17,25 @@ Application that provides unix/linux shell-like command line interface (CLI) for
 
 ## Dependencies  
 **ViPR**: 2.3  
-**Python**: 3.2.5, 3.4 (Additional modules: requests, configparser)  
+**Python**: 2.7, 3.2.5, 3.4 (Additional modules: requests, configparser)  
+
+## Install Setuptools
+
+Follow these steps only if you have python 2.7.
+If you don't know what version of python you have,
+type in the commnad line "python --version".
+
+1. Download the code for [Setuptools](https://bootstrap.pypa.io/ez_setup.py).
+2. Open a new Command Line.
+3. Navigate to the folder where that code is being stored.
+4. Run the code by typing "python ez_setup.py".
+5. Close Command line window.
 
 ## Install  
 
 1.	Copy downloaded package to any location  
 2.	Windows & Linux only: Open cmd/terminal prompt  
-3.	Navigate to ViPR command downloaded folder  
+3.	Navigate to ViPR command downloaded folder. 
 4.  Type `python setup.py install` to install dependent modules.  
 5.	Navigate to "config" folder and enter your ViPR host in cli_config.ini.  
 6.	Type `viprcommand` in cmd/terminal prompt and press ENTER. The log in prompt appears:  
